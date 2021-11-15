@@ -11,7 +11,9 @@
     define('DB_PASS', '');
 
     // MVC config
-    define('DEFAULT_CONTROLLER', 'controller/');
+    define('DEFAULT_CONTROLLER', __DIR__ . '/controller/');
     define('ADMIN_CONTROLLER', __DIR__ . '/admin/controller/');
-    define('DEFAULT_VIEW', 'view/');
+    define('DEFAULT_VIEW', __DIR__ . '/view/');
     define('ADMIN_VIEW', __DIR__ . '/admin/view/');
+    define("DEFAULT_LAYOUT", __DIR__ . "/layout/");
+    define("ADMIN_LAYOUT", __DIR__ . "/admin/layout/");

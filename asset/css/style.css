@@ -32,6 +32,8 @@ body {
 }
 
 .form {
+    position: relative;
+    z-index: 2;
     min-height: 1100px;
     max-width: 589px;
     margin: 0 auto;
@@ -46,9 +48,11 @@ body {
     padding-top: 30px;
 }
 
-#frmdangky {
+#formdangky {
     margin-left: 73px;
     padding-top: 30px;
+    position: absolute;
+    z-index: 99999;
 }
 
 .form-group {
@@ -95,4 +99,101 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--white);
     background-color: var(--dark-blue);
+}
+
+.wave {
+    position: relative;
+    width: 589px;
+    margin-left: -73px;
+}
+
+#wave {
+    position: absolute;
+    bottom: -110px;
+    left: 0;
+}
+
+#file-1 {
+    position: absolute;
+    max-width: 700px;
+    max-height: 400px;
+    top: -200px;
+    right: -350px;
+    z-index: 20;
+}
+
+#file-2 {
+    position: absolute;
+    max-width: 700px;
+    max-height: 400px;
+    bottom: -220px;
+    left: -450px;
+    z-index: 21;
+}
+
+
+/* form-forget-password */
+
+.form-forget-password {
+    position: relative;
+    min-height: 400px;
+    max-width: 557px;
+    margin: 100px auto;
+    border-radius: 15px;
+    background-color: var(--light-blue);
+    position: relative;
+    z-index: 2;
+}
+
+#form-forget {
+    margin-left: 63px;
+    padding-top: 30px;
+}
+
+#form-forget>img {
+    position: absolute;
+    top: -130px;
+    left: 150px;
+    max-width: 754px;
+    max-height: 400px;
+}
+
+#form-forget>h3 {
+    margin: 0 80px;
+    color: var(--white);
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#input-email {
+    text-align: center;
+    height: 60px;
+    border-radius: 100px;
+}
+
+#btn-forget {
+    width: 325px;
+    height: 50px;
+    margin-left: 60px;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 10px 8px var(--black);
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--dark-blue);
+    background-color: var(--blue);
+}
+
+#circle {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    max-width: 70%;
+    max-height: 100%;
+}
+
+#circle>circle {
+    max-width: 500px;
 }

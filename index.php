@@ -9,4 +9,7 @@
     $VIEW = call_user_func($action) ?? DEFAULT_VIEW . "home/index.php";
     $TITLE = "Mr. Sixth"; 
 
+
+    // Branch chinh_sua_index
+
     require_once DEFAULT_LAYOUT . "default.php";

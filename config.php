@@ -3,6 +3,9 @@
     //
     define("ROOT_LEVEL", 1);
     define("ADMIN_LEVEL", ROOT_LEVEL + 1);
+    define("REQUEST_PATH", strtok($_SERVER['REQUEST_URI'], '?'));
+    define("ROOT_DOMAIN", "/" . explode('/', REQUEST_PATH)[ROOT_LEVEL]);
+    define('ASSET', ROOT_DOMAIN . "/asset/");
 
     // Database config
     define('DB_HOST', 'localhost');

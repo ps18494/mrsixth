@@ -31,7 +31,7 @@ function insertUser(
 )
 {
     $sql = "INSERT INTO `user`".
-        " (`ten`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)"
+        " (`ten`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)".
         " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,

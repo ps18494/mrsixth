@@ -16,7 +16,7 @@ function insertTinTuc(
 	$ngay,
 	$tacGia,
 	$idBenh,
-	$idThuoc,
+	$idThuoc
 )
 {
 	$sql = "INSERT INTO `tin_tuc` ".
@@ -59,7 +59,7 @@ function updateTinTuc(
 		" `tieu_de` = ?, `hinh_anh` = ?, `noi_dung` = ?, `ngay` = ?, `tac_gia` = ?, `id_benh` = ?, `id_thuoc` = ?".
 		" WHERE `id_tin` = ?";
 	$result = pdo_execute(
-		$sql
+		$sql,
 		$tieuDe,
 		$hinhAnh,
 		$noiDung,

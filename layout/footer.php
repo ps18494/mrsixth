@@ -9,10 +9,10 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
         </p>
         <ul class="social">
-            <img src="asset/icons/facebook.png" alt="">
-            <img src="asset/icons/ig.png" alt="">
-            <img src="asset/icons/in.png" alt="">
-            <img src="asset/icons/twitter.png" alt="">
+            <img src="<?= ASSET . "/icons/facebook.png"?>" alt="">
+            <img src="<?= ASSET . "/icons/ig.png"?>" alt="">
+            <img src="<?= ASSET . "/icons/in.png"?>" alt="">
+            <img src="<?= ASSET . "/icons/twitter.png"?>" alt="">
 
         </ul>
       </div>
@@ -28,8 +28,8 @@
       <div class="right-box-footer col-6 col-lg-3 mb-3">
         <h5>Liên hệ</h5>
         <ul class="list-unstyled">
-          <li class="mb-2"><img src="asset/icons/location.png" alt=""><a class="footer-item" href="#">Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</a></li>
-          <li class="mb-2"><img src="asset/icons/email.png" alt=""><a class="footer-item" id="footer-item-email" href="#">fpt@fpt.edu.vn</a></li>
+          <li class="mb-2"><img src="<?= ASSET . "/icons/location.png"?>" alt=""><a class="footer-item" href="#">Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</a></li>
+          <li class="mb-2"><img src="<?= ASSET . "/icons/email.png"?>" alt=""><a class="footer-item" id="footer-item-email" href="#">fpt@fpt.edu.vn</a></li>
         </ul>
       </div>
     </div>

@@ -1,13 +1,18 @@
 <?php declare(strict_types=1);
-
+require_once 'dao/pdo.php';
 // Danh sách tin tức
-function getAllTinTuc() 
-{
-	$sql = "SELECT * FROM tin_tuc";
+function getAllTinTuc($star, $pagesize) 
+{       
+	$sql = "SELECT * FROM tin_tuc LIMIT $star, $pagesize ";
 	$result = pdo_query($sql);
-	return $result;
+	return $result;     
 }
-
+function countTintuc(){
+        $sql = "SELECT count(*) FROM tin_tuc";
+        $tongRecord = pdo_query_value($sql);
+        settype($tongRecord, "int");
+        return $tongRecord;
+}
 // Tạo tin tức
 function insertTinTuc(
 	$tieuDe,
@@ -59,7 +64,7 @@ function updateTinTuc(
 		" `tieu_de` = ?, `hinh_anh` = ?, `noi_dung` = ?, `ngay` = ?, `tac_gia` = ?, `id_benh` = ?, `id_thuoc` = ?".
 		" WHERE `id_tin` = ?";
 	$result = pdo_execute(
-		$sql
+		$sql,
 		$tieuDe,
 		$hinhAnh,
 		$noiDung,

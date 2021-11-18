@@ -1,0 +1,97 @@
+body{
+   font-family: 'Roboto Mono', monospace;
+}
+.tab-login{
+    width: 300px;
+    margin: 341px 848px;
+    background: rgba(210, 226, 255, 0.85);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 38px;
+    padding: 23px;
+    line-height: 30px;
+}
+.title{
+    border-left: 2px solid green;
+    background: -webkit-linear-gradient(left, rgba(210, 226, 255, 0.85), rgba(210, 226, 255,1), rgba(210, 226, 255, 3));
+    text-align: center
+}
+ input {
+    border-style: none;
+    background: transparent;
+    outline: none;
+}
+.continue{
+    text-align: center
+}
+.button-login{
+    text-align: center
+}
+.button-login button{
+    width: 100px;
+}
+ button {
+    height: 40px;
+    width: 250px;
+    background: white;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 50%);
+    border-radius: 51px;
+    border: 1px;
+    outline: none;
+     font-family: 'Roboto Mono', monospace;
+}
+.box span{
+  background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.box button span{
+    align-items: center
+}
+.box i{
+  background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+#box{
+    margin: 20px 0px;
+}
+ .webflow-style-input {
+    width: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: rgba(210, 226, 255, 0.85);
+}
+ .webflow-style-input:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+    background-size: 300% auto;
+    animation: gradient 3s linear infinite;
+}
+ .webflow-style-input input {
+    flex-grow: 1;
+    color: black;
+    font-size: 1rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    font-family: 'Roboto Mono', monospace;
+}
+ .webflow-style-input input::-webkit-input-placeholder {
+    color: #7881a1;
+}
+
+ 

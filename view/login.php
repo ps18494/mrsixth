@@ -2,29 +2,35 @@
 
     echo "Login Page";
 ?>
-    <div class="row mb ">
-        <div class="boxtitle">Đăng nhập</div>
-        <div class="boxcontent formtaikhoan">
-            <form action="#" method="post">
-                <div class="row mb10">
-                    Tên đăng nhập<br>
-                    <input type="text" name="user" id="">
-                </div>
-                <div class="row mb10">
-                    Mật khẩu<br>
-                    <input type="password" name="pass" id="">
-                </div>
-                <div class="row mb10">
-                    <input type="checkbox" name="" id=""> Ghi nhớ tài khoản?</div>
-                <div class="row mb10">
-                    <input type="submit" value="Đăng nhập">
-                </div>
+
+     <div class="tab-login">
+            <form action="#">
+                <div class="title"><h2>Log in</h2></div>
+
+            <div class="webflow-style-input" id="box">
+                <input class="" type="username" placeholder="User name">
+            </div>
+            <div class="webflow-style-input" id="box">
+                <input class="" type="password" placeholder="Password"></input>
+              
+            </div>
+             <input class="form-check-input" type="checkbox"> Remember me  
+            <div class="button-login" id="box">
+               <button><span>Log in</span></i></button>
+            </div>
             </form>
-            <li>
-                <a href="#">Quên mật khẩu</a>
-            </li>
-            <li>
-                <a href="#">Đăng ký thành viên</a>
-            </li>
+
+            <!--<a href="" class="pass-forgot">Forgot your password?</a>-->
+            <p href="" class="continue">or continue with</p>
+
+            <div class="box"  id="box">
+               <button><i class="fa fa-google" style="font-size:25px;"></i><span>oogle</span></button>
+            </div>
+            <div class="box"  id="box">
+                <button>Bạn chưa có tài khoản?</button>
+            </div>
+            <hr>
+            <div class="box"  id="box">
+                <button>Quên mật khẩu</button>
+            </div>
         </div>
-    </div>

@@ -19,7 +19,7 @@ function insertBenh(
     $doiTuong,
     $chanDoan,
     $dieuTri
-):
+)
 {
     $sql = "INSERT INTO `benh`".
         " (`ten_benh`, `mo_ta`, `trieu_chung`, `nguyen_nhan`, `phong_ngua`, `duong_lay_truyen`, `doi_tuong`, `chan_doan`, `dieu_tri`) ". 
@@ -41,7 +41,7 @@ function insertBenh(
 
 
 // Lấy chi tiết bệnh theo id
-function getBenhById($id):
+function getBenhById($id)
 {
     $sql = "SELECT * FROM benh WHERE id = ?";
     $result = pdo_query_one($sql, $id);
@@ -61,7 +61,7 @@ function updateBenh(
     $chanDoan,
     $dieuTri,
     $id
-):
+)
 {
     $sql = "UPDATE `benh` SET ". 
         "`ten_benh` = ?, `mo_ta` = ?, `trieu_chung` = ?, `nguyen_nhan` = ?, `phong_ngua` = ?".
@@ -84,7 +84,7 @@ function updateBenh(
 }
 
 // Xóa bệnh theo id
-function deleteBenh($id):
+function deleteBenh($id)
 {
     $sql = "DELETE FROM benh WHERE id = ?";
     $result = pdo_execute($sql, $id);
@@ -92,7 +92,7 @@ function deleteBenh($id):
 }
 
 // Tìm kiếm bệnh theo tên
-function searchBenhByTen($tenBenh):
+function searchBenhByTen($tenBenh)
 {
     $sql = "SELECT `id_benh`, `ten_benh`, `mo_ta` FROM `benh` WHERE `ten_benh` LIKE ?";
     $result = pdo_query($sql, "%$tenBenh%");
@@ -100,7 +100,7 @@ function searchBenhByTen($tenBenh):
 }
 
 // Tìm kiếm bệnh theo triệu chứng
-function searchBenhByTrieuChung($trieuChung):
+function searchBenhByTrieuChung($trieuChung)
 {
     $sql = "SELECT `id_benh`, `ten_benh`, `mo_ta` FROM `benh` WHERE `trieu_chung` LIKE ?";
     $result = pdo_query($sql, "%$trieuChung%");
@@ -109,7 +109,7 @@ function searchBenhByTrieuChung($trieuChung):
 
 
 // Kiểm tra tồn tại bệnh theo tên
-function checkExistBenhByTen($tenBenh):
+function checkExistBenhByTen($tenBenh)
 {
     $sql = "SELECT COUNT(`id_benh`) FROM `benh` WHERE `ten_benh` = ?";
     $result = pdo_query_value($sql, $tenBenh);

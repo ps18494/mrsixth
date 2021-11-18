@@ -41,8 +41,8 @@ function insertDeXuat(
     $sql = "INSERT INTO `de_xuat` ". 
         "(`mo_ta`, `trieu_chung`, `nguyen_nhan`, `phong_ngua`, `duong_lay_truyen`, `doi_tuong`, `chan_doan`, `dieu_tri`, `id_benh`, `id_user`) ".
         "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $result = pdo_excute(
-        $sql
+    $result = pdo_execute(
+        $sql,
         $moTa,
         $trieuChung,
         $nguyenNhan,
@@ -68,14 +68,14 @@ function getDeXuatById($idDeXuat)
 // Cập nhật đề xuất
 function updateDeXuat() {
     $sql = "";
-    $result = pdo_excute($sql);
+    $result = pdo_execute($sql);
     return $result;
 }
 
 // Xóa đề xuất
 function deleteDeXuat($idDeXuat) {
     $sql = "DELETE FROM `de_xuat` WHERE `id_de_xuat` = ?";
-    $result = pdo_excute($sql, $idDeXuat);
+    $result = pdo_execute($sql, $idDeXuat);
     return $result;
 }
 

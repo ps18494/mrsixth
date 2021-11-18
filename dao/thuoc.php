@@ -69,7 +69,7 @@ function updateThuoc(
         " `ten_thuoc` = ?, `dang_bao_che` = ?, `nhom_thuoc` = ?, `hinh_anh` = ?, `lieudung_cachdung` = ?, `than_trong` = ?, `chi_dinh` = ?, `chong_chi_dinh` = ?, `tai_lieu_tham_khao` = ?, `tac_dung_phu` = ?, `chu_y` = ?". 
         " WHERE `id_thuoc` = ?";
     $result = pdo_execute(
-        $sql
+        $sql,
         $tenThuoc, 
         $dangBaoChe,
         $nhomThuoc,

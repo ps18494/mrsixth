@@ -1,8 +1,12 @@
 <?php declare(strict_types=1);
 
     echo "Login Page";
+    
 ?>
+<head>
+        <link rel="stylesheet" href="<?= ASSET . "css/login.css"?>"/>
 
+</head>
      <div class="tab-login">
             <form action="#">
                 <div class="title"><h2>Log in</h2></div>

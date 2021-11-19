@@ -21,7 +21,7 @@ function insertTinTuc(
 	$ngay,
 	$tacGia,
 	$idBenh,
-	$idThuoc,
+	$idThuoc
 )
 {
 	$sql = "INSERT INTO `tin_tuc` ".

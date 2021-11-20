@@ -29,8 +29,8 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Nhập từ khóa" aria-label="Search">
+            <form class="d-flex" action="<?= ROOT_DOMAIN . "/benh/timkiem"?>">
+                <input name="q" class="form-control me-2" type="search" placeholder="Nhập từ khóa" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
             </form>
             <form class="d-flex">

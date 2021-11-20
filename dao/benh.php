@@ -43,11 +43,18 @@ function insertBenh(
 // Lấy chi tiết bệnh theo id
 function getBenhById($id)
 {
-    $sql = "SELECT * FROM benh WHERE id = ?";
+    $sql = "SELECT * FROM benh WHERE `id_benh` = ?";
     $result = pdo_query_one($sql, $id);
     return $result;
 }
 
+// Danh sách các ảnh của bệnh
+function getAnhByIdBenh($idBenh)
+{
+    $sql = "SELECT `name` FROM `anh_benh` WHERE `id_benh` = ?";
+    $result = pdo_query($sql, $idBenh);
+    return $result;
+}
 
 // Cập nhật bệnh
 function updateBenh(

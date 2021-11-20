@@ -8,6 +8,22 @@
     }
 
     function chitiet() {
+        global $benh, $danhSachAnhBenh;
+        $id_benh = $_GET['idbenh'] ?? NULL;
+
+        if (!$id_benh) {
+            // Tạm thời chuyển hướng đến trang chủ
+            // TODO: thông báo không tìm thấy bệnh hoặc 404
+            header("location: ". ROOT_DOMAIN);
+        }
+        $benh = getBenhById($id_benh);
+        $danhSachAnhBenh = getAnhByIdBenh($id_benh);
+
+        if (!$benh) {
+            // Không có bệnh nào với idBenh truy vấn
+            header("location: ". ROOT_DOMAIN);
+        }
+
         return DEFAULT_VIEW . 'benh/chitiet.php';
     }
 

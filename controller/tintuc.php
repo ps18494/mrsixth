@@ -21,9 +21,18 @@
         $to   = $page + 2; if ($to > $tongTrang) $to = $tongTrang;
         
         $dstintuc = getAllTinTuc($star, $pagesize); //lấy danh sách tin
+        
+        global $tinXemNhieu, $tinMoiNhat;
+        $tinXemNhieu = tinXemNhieu();
+        $tinMoiNhat = tinMoiNhat();
+        
         return DEFAULT_VIEW . 'tintuc/index.php';
     }
 
     function chitiet() {
+        global $layChitiettin, $listtintuc;
+        $id_tin = $_GET['id_tin'] ?? NULL;
+        $layChitiettin = getTinTucByID($id_tin);
+        $listtintuc = getTintuc();
         return DEFAULT_VIEW . 'tintuc/chitiet.php';
     }

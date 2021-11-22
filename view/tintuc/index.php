@@ -7,9 +7,9 @@
                 <!--tin tức 1-->
                 <?php foreach($dstintuc as $row) { ?>
                 <div class="tintuc">
-                    <div class="img-tintuc"><img src="img/bangtinbenh.jpeg" alt="alt"></div>
+                    <div class="img-tintuc"><img  src="img/bangtinbenh.jpeg" alt="Ảnh có thể có hoặc không"></div>
                     <div class="box-tintuc">
-                        <div class="title-box-tintuc"><h4><a href="#"><?=$row['tieu_de']?></a></h4></div>
+                        <div class="title-box-tintuc"><h4><a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $row['id_tin']?>"><?=$row['tieu_de']?></a></h4></div>
                         <div class="thongtin-tintuc">
                             <div class="tac-gia"><i class="fa fa-user"></i> <span><?=$row['tac_gia']?></span></div> 
                             <div class="ngay-dang"><i class="fa fa-calendar"></i> <span><?=$row['ngay']?></span></div>
@@ -17,10 +17,10 @@
                         </div>
                         <div class="mota-tintuc">
                             <p>
-                                <?=$row['noi_dung']?>
+                                <a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $row['id_tin']?>"><?=$row['tom_tat']?></a>
                             </p>
                         </div>
-                        <a href="#">Xem chi tiết</a>
+                        <a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $row['id_tin']?>">Xem chi tiết</a>
                     </div>
                 </div>
                 <?php } ?>
@@ -65,23 +65,20 @@
                     
                 </div>
                 <div class="tintuc-moinhat">
+                   
                     <div><h3>Bài viết mới nhất</h3></div>
                     <ul class="list-group">
-                        <li ><a href="#">Cras justo odio</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
+                        <?php foreach ($tinMoiNhat as $tinmoi){ ?>
+                            <li><a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=".$tinmoi['id_tin']?>"><?=$tinmoi['tieu_de']?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="top">
                     <div><h3>Bài viết nhiều người xem</h3></div>
                     <ul class="list-group">
-                        <li ><a href="#">Cras justo odio</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
-                        <li ><a href="#">Dapibus ac facilisis in</a></li>
+                        <?php foreach ($tinXemNhieu as $tinNhieu){ ?>
+                            <li><a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=".$tinNhieu['id_tin']?>"><?=$tinNhieu['tieu_de']?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </aside>

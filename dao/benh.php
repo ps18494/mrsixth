@@ -43,11 +43,18 @@ function insertBenh(
 // Lấy chi tiết bệnh theo id
 function getBenhById($id)
 {
-    $sql = "SELECT * FROM benh WHERE id = ?";
+    $sql = "SELECT * FROM benh WHERE `id_benh` = ?";
     $result = pdo_query_one($sql, $id);
     return $result;
 }
 
+// Danh sách các ảnh của bệnh
+function getAnhByIdBenh($idBenh)
+{
+    $sql = "SELECT `name` FROM `anh_benh` WHERE `id_benh` = ?";
+    $result = pdo_query($sql, $idBenh);
+    return $result;
+}
 
 // Cập nhật bệnh
 function updateBenh(
@@ -102,8 +109,26 @@ function searchBenhByTen($tenBenh)
 // Tìm kiếm bệnh theo triệu chứng
 function searchBenhByTrieuChung($trieuChung)
 {
-    $sql = "SELECT `id_benh`, `ten_benh`, `mo_ta` FROM `benh` WHERE `trieu_chung` LIKE ?";
+    // $sql = "SELECT `id_benh`, `ten_benh`, `mo_ta` FROM `benh` WHERE `trieu_chung` LIKE ?";
+    $sql = "SELECT `b`.`id_benh`, `b`.`ten_benh`, `b`.`trieu_chung`, (SELECT name FROM `anh_benh` `ab` WHERE `b`.`id_benh` = `ab`.`id_benh` LIMIT 0, 1) `anh` "
+    ."FROM `benh` `b`"
+    ."WHERE `b`.`trieu_chung` LIKE ?";
     $result = pdo_query($sql, "%$trieuChung%");
+    return $result;
+}
+
+
+// Danh sách bệnh bởi danh sách triệu chứng
+function searchBenhByDanhSachTrieuChung($danhSachTrieuChung)
+{
+    $sql = "SELECT `b`.`id_benh`, `b`.`ten_benh`, `b`.`trieu_chung`, (SELECT name FROM `anh_benh` `ab` WHERE `b`.`id_benh` = `ab`.`id_benh` LIMIT 0, 1) `anh` "
+    ." FROM `benh` `b` WHERE";
+    $conditionParts = array(); 
+    foreach($danhSachTrieuChung as $trieuChung){
+        $conditionParts[] = "`b`.`trieu_chung` LIKE '%$trieuChung%'";
+        }
+    $sql .= implode(' AND ', $conditionParts);
+    $result = pdo_query($sql);
     return $result;
 }
 

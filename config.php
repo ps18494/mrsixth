@@ -6,6 +6,8 @@
     define("REQUEST_PATH", strtok($_SERVER['REQUEST_URI'], '?'));
     define("ROOT_DOMAIN", "/" . explode('/', REQUEST_PATH)[ROOT_LEVEL]);
     define('ASSET', ROOT_DOMAIN . "/asset/");
+    define('UPLOADS', ROOT_DOMAIN . "/uploads/");
+    
 
     // Database config
     define('DB_HOST', 'localhost');

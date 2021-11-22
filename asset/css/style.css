@@ -110,7 +110,7 @@ body {
     font-family: var(--open-san);
 }
 
-.left-box-banner>button {
+.left-box-banner button {
     border: none;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -182,7 +182,9 @@ body {
     border-radius: 4px;
     text-transform: uppercase;
 }
-
+.card-small {
+	font-size: 0.9em;
+}
 
 /* end-service */
 
@@ -225,7 +227,7 @@ body {
 /* rate */
 
 .rate {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -516,6 +518,28 @@ body {
 .form-inline>.btn-dang-nhap:hover {
     border: none;
     background-color: var(--dark-blue);
+}
+
+.header-search-form {
+	position: relative;
+}
+.header-search-form button{
+	position: absolute;
+	right: 0;
+	height: 100%;
+	padding: 0.2rem;
+	border-radius: 5px;
+	background: #d8e6ff;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	width: 10%;
+	padding: 6px;
+	border-radius: 2px;
+}
+.header-search-form input {
+	width: 100%;
+	margin: 0;
 }
 
 

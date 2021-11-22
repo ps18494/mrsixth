@@ -182,7 +182,9 @@ body {
     border-radius: 4px;
     text-transform: uppercase;
 }
-
+.card-small {
+	font-size: 0.9em;
+}
 
 /* end-service */
 
@@ -225,7 +227,7 @@ body {
 /* rate */
 
 .rate {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 

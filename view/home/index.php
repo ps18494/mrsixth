@@ -9,8 +9,12 @@
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>
-                <button type="submit">Đăng ký</button>
-                <button type="submit">Đăng nhập</button>
+                <a href="<?= ROOT_DOMAIN . "/singup" ?>">
+                    <button type="submit">Đăng ký</button>
+                </a>
+                <a href="<?= ROOT_DOMAIN . "/login" ?>">
+                    <button type="submit">Đăng nhập</button>
+                </a>
             </div>
             <div class="right-box-banner">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="text/ecmascript" width="1440" zoomAndPan="magnify" contentStyleType="text/css" viewBox="0 0 1440 809.999993" height="809.999993" preserveAspectRatio="xMidYMid meet" version="1.0">
@@ -67,7 +71,7 @@
                 <img class="card-img-top" src="<?= ASSET . "../asset/icons/user.png" ?>" alt="">
                 <div class="card-body">
                     <h4 class="card-title">Tra cứu bệnh</h4>
-                    <p class="card-text">
+                    <p class="card-text card-small">
                         Khách hàng có thể tra cứu bệnh thông qua các triệu chứng.
                     </p>
                     <button type="submit" class="btn-tra-cuu">Tra cứu</button>

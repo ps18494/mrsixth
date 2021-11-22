@@ -1,7 +1,8 @@
-body{
-   font-family: 'Roboto Mono', monospace;
+body {
+    font-family: 'Roboto Mono', monospace;
 }
-.tab-login{
+
+.tab-login {
     width: 300px;
     margin: 15% 50%;
     background: rgba(210, 226, 255, 0.85);
@@ -10,26 +11,32 @@ body{
     padding: 23px;
     line-height: 30px;
 }
-.title{
+
+.title {
     border-left: 2px solid green;
-    background: -webkit-linear-gradient(left, rgba(210, 226, 255, 0.85), rgba(210, 226, 255,1), rgba(210, 226, 255, 3));
+    background: -webkit-linear-gradient(left, rgba(210, 226, 255, 0.85), rgba(210, 226, 255, 1), rgba(210, 226, 255, 3));
     text-align: center
 }
- input {
+
+input {
     border-style: none;
     background: transparent;
     outline: none;
 }
-.continue{
+
+.continue {
     text-align: center
 }
-.button-login{
+
+.button-login {
     text-align: center
 }
-.button-login button{
+
+.button-login button {
     width: 100px;
 }
- button {
+
+button {
     height: 40px;
     width: 250px;
     background: white;
@@ -37,27 +44,30 @@ body{
     border-radius: 51px;
     border: 1px;
     outline: none;
-     font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
 }
-.box span{
-  background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
+.box span {
+    background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.box button span{
+
+.box button span {
     align-items: center
 }
-.box i{
-  background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
+.box i {
+    background: -webkit-linear-gradient(180deg, #FF0000 0%, #B4B800 30.21%, #039200 63.02%, #001AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-#box{
+
+#box {
     margin: 20px 0px;
 }
- .webflow-style-input {
+
+.webflow-style-input {
     width: 250px;
     position: relative;
     display: flex;
@@ -67,7 +77,8 @@ body{
     border-radius: 2px;
     background: rgba(210, 226, 255, 0.85);
 }
- .webflow-style-input:after {
+
+.webflow-style-input:after {
     content: "";
     position: absolute;
     left: 0px;
@@ -82,7 +93,8 @@ body{
     background-size: 300% auto;
     animation: gradient 3s linear infinite;
 }
- .webflow-style-input input {
+
+.webflow-style-input input {
     flex-grow: 1;
     color: black;
     font-size: 1rem;
@@ -90,8 +102,7 @@ body{
     vertical-align: middle;
     font-family: 'Roboto Mono', monospace;
 }
- .webflow-style-input input::-webkit-input-placeholder {
+
+.webflow-style-input input::-webkit-input-placeholder {
     color: #7881a1;
 }
-
- 

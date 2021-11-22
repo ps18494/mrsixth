@@ -7,7 +7,7 @@
         <p><span class="tacgia">Tác giả: <?=$tac_gia?></span></p>
         <div class="noidung-chitiettin">
             <div class="box-chitiettin">
-                <div class="img-chitiettin"><img src="../uploads/diseases/005aec2372e2d72819b3c33f48d6f3c3bd9f823d.jpeg" alt="Hình ảnh có thể có hoặc không"></div>
+                <div class="img-chitiettin"><img src="" alt="Hình ảnh có thể có hoặc không"></div>
                 <div class="chitiettin-detail">
                     <p>
                         <?=$tom_tat ?>
@@ -21,13 +21,11 @@
     </div>
     <hr>
     <div class="list-baiviet">
-        <h2>Các bài viết khác</h2>
+        <a href="<?=ROOT_DOMAIN ."/tintuc" ?>"><h2>Các bài viết khác</h2></a>
         <ul>
-            <li><a href="#">Tình hình dịch covid ngày hôm nay</a></li>
-            <li><a href="#">Tình hình dịch covid ngày hôm nay</a></li>
-            <li><a href="#">Tình hình dịch covid ngày hôm nay</a></li>
-            <li><a href="#">Tình hình dịch covid ngày hôm nay</a></li>
-            <li><a href="#">Tình hình dịch covid ngày hôm nay</a></li>
+            <?php foreach($listtintuc as $list){ ?>
+                <li><a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=".$list['id_tin']?>"><?=$list['tieu_de']?></a></li>
+            <?php } ?>
         </ul>
     </div>
 </div>

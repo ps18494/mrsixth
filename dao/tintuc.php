@@ -7,6 +7,12 @@ function getAllTinTuc($star, $pagesize)
 	$result = pdo_query($sql);
 	return $result;     
 }
+function getTintuc() 
+{       
+	$sql = "SELECT * FROM tin_tuc LIMIT ".rand(1, 15).", 5 ";
+	$result = pdo_query($sql);
+	return $result;     
+}
 function countTintuc(){
         $sql = "SELECT count(*) FROM tin_tuc";
         $tongRecord = pdo_query_value($sql);
@@ -103,3 +109,15 @@ function tangLuotXemTheoId($id)
 	return $result;
 }
 
+//lấy tin mới nhất
+
+function tinMoiNhat(){
+    $sql = "SELECT * FROM `tin_tuc` where 1 ORDER BY `ngay` DESC LIMIT 0,5 ";
+    $result = pdo_query($sql);
+    return $result;
+}
+function tinXemNhieu(){
+    $sql = "SELECT * FROM `tin_tuc` where 1 ORDER BY `so_luot_xem` DESC LIMIT 0,5";
+    $result = pdo_query($sql);
+    return $result;
+}

@@ -1,36 +1,66 @@
-<footer class="bd-footer py-5 mt-5">
-  <div class="container py-5">
-    <div class="row">
-      <div class="left-box-footer col-lg-6 mb-4">
-        <a class="brand-item d-inline-flex align-items-center mb-2 text-decoration-none" href="#" aria-label="Bootstrap">
-          Mr.Sixth
-        </a>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        </p>
-        <ul class="social">
-            <img src="<?= ASSET . "/icons/facebook.png"?>" alt="">
-            <img src="<?= ASSET . "/icons/ig.png"?>" alt="">
-            <img src="<?= ASSET . "/icons/in.png"?>" alt="">
-            <img src="<?= ASSET . "/icons/twitter.png"?>" alt="">
-
-        </ul>
+<footer class="footer">
+  <div class="box-footer row">
+    <div class="footer-left col-sm-6">
+      <a href="<?= ROOT_DOMAIN ?>" class="navbar-brand">Mr.Sixth</a>
+      <p>
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="social-media">
+        <img src="<?= ASSET . "/icons/facebook.png"?>" alt="facebook-img">
+        <img src="<?= ASSET . "/icons/ig.png"?>" alt="ig-img">
+        <img src="<?= ASSET . "/icons/in.png"?>" alt="in-img">
+        <img src="<?= ASSET . "/icons/twitter.png"?>" alt="twitters-img">
       </div>
-      <div class="middle-box-footer col-6 col-lg-2 offset-lg-1 mb-3">
-        <h5>Danh sách</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a class="footer-item" href="#">Trang chủ</a></li>
-          <li class="mb-2"><a class="footer-item" href="#">Thuốc</a></li>
-          <li class="mb-2"><a class="footer-item" href="#">Bệnh</a></li>
-          <li class="mb-2"><a class="footer-item" href="#">Liên hệ</a></li>
-        </ul>
+    </div>
+    <div class="footer-middle col-sm-3">
+      <h4>
+        Danh sách
+      </h4>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="footer-item nav-link" href="#">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="footer-item nav-link" href="#">Thuốc</a>
+        </li>
+        <li class="nav-item">
+          <a class="footer-item nav-link" href="#">Bệnh</a>
+        </li>
+        <li class="nav-item">
+          <a class="footer-item nav-link" href="#">Liên hệ</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-right col-sm-3">
+      <h4>
+        Liên hệ
+      </h4>
+      <div class="footer-right-item box-location">
+        <div class="location">
+          <img src="<?= ASSET . "/icons/location.png"?>" alt="">
+          <p>
+            Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh
+          </p>
+        </div>
       </div>
-      <div class="right-box-footer col-6 col-lg-3 mb-3">
-        <h5>Liên hệ</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><img src="<?= ASSET . "/icons/location.png"?>" alt=""><a class="footer-item" href="#">Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</a></li>
-          <li class="mb-2"><img src="<?= ASSET . "/icons/email.png"?>" alt=""><a class="footer-item" id="footer-item-email" href="#">fpt@fpt.edu.vn</a></li>
-        </ul>
+      <div class="footer-right-item box-email">
+        <div class="email">
+          <img src="<?= ASSET . "/icons/email.png"?>" alt="">
+          <p>
+            fpt@fpt.edu.vn
+          </p>
+        </div>
+      </div>
+      <div class="footer-right-item box-dien-thoai">
+        <div class="dien-thoai">
+          <img src="<?= ASSET . "/icons/dien-thoai"?>.png" alt="">
+          <p>
+            0123456789
+          </p>
+        </div>
       </div>
     </div>
   </div>

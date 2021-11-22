@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?= ASSET . "css/home.css"?>">
     <link rel="stylesheet" href="<?= ASSET . "css/style.css" ?>">
     <link rel="stylesheet" href="<?= ASSET . "css/tintuc.css"?>"/>
-
+    <link rel="stylesheet" href="<?= ASSET . "css/ttcn.css"?>"/>
 
 </head>
 <body>

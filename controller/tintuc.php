@@ -25,5 +25,8 @@
     }
 
     function chitiet() {
+        global $layChitiettin;
+        $id_tin = $_GET['id_tin'] ?? NULL;
+        $layChitiettin = getTinTucByID($id_tin);
         return DEFAULT_VIEW . 'tintuc/chitiet.php';
     }

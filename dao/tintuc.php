@@ -41,10 +41,10 @@ function insertTinTuc(
 }
 
 // Lấy tin tức theo mã
-function getTinTucByID($id) 
+function getTinTucByID($id_tin) 
 {
     $sql = "SELECT * FROM `tin_tuc` WHERE `id_tin` = ?";
-    $result = pdo_query_one($sql, $id);
+    $result = pdo_query_one($sql, $id_tin);
     return $result;
 }
 

@@ -7,9 +7,9 @@
                 <!--tin tức 1-->
                 <?php foreach($dstintuc as $row) { ?>
                 <div class="tintuc">
-                    <div class="img-tintuc"><img src="img/bangtinbenh.jpeg" alt="alt"></div>
+                    <div class="img-tintuc"><img  src="img/bangtinbenh.jpeg" alt="alt"></div>
                     <div class="box-tintuc">
-                        <div class="title-box-tintuc"><h4><a href="#"><?=$row['tieu_de']?></a></h4></div>
+                        <div class="title-box-tintuc"><h4><a href="chitiet?id_tin=<?=$row['id_tin']?>"><?=$row['tieu_de']?></a></h4></div>
                         <div class="thongtin-tintuc">
                             <div class="tac-gia"><i class="fa fa-user"></i> <span><?=$row['tac_gia']?></span></div> 
                             <div class="ngay-dang"><i class="fa fa-calendar"></i> <span><?=$row['ngay']?></span></div>
@@ -17,10 +17,10 @@
                         </div>
                         <div class="mota-tintuc">
                             <p>
-                                <?=$row['noi_dung']?>
+                                <a href="chitiet?id_tin=<?=$row['id_tin']?>"><?=$row['tom_tat']?></a>
                             </p>
                         </div>
-                        <a href="#">Xem chi tiết</a>
+                        <a href="chitiet?id_tin=<?=$row['id_tin']?>">Xem chi tiết</a>
                     </div>
                 </div>
                 <?php } ?>

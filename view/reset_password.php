@@ -12,14 +12,20 @@
         <div class="img-forget-password">
             <img src="<?= ASSET . "icons/forgot.png"?>" alt="img-forget">
         </div>
-        <h3>Quên mật khẩu</h3>
+        <h3>Đặt lại mật khẩu</h3>
         <div class="enter-email">
+            <input type="hidden" name="email" value="<?=$email?>">
+            <input type="hidden" name="key" value="<?=$key?>">
             <div class="form-input-forget form-group">
-                <label for="email">Nhập địa chỉ email</label> <br>
-                <input placeholder="Vui lòng nhập địa chỉ email" type="email" class="input-email" name="email" required>
+                <label for="email">Mật khẩu mới</label> <br>
+                <input placeholder="Vui lòng Mật khẩu mới" type="password" class="input-email" name="password" required>
             </div>
             <div class="form-input-forget form-group">
-                <button type="submit" class="btn-forget">Lấy lại mật khẩu</button>
+                <label for="email">Xác nhận mật khẩu mới</label> <br>
+                <input placeholder="Xác nhận mật khẩu mới" type="password" class="input-email" name="confirmpassword" required>
+            </div>
+            <div class="form-input-forget form-group">
+                <button type="submit" class="btn-forget">Đổi mật khẩu</button>
             </div>
         </div>
     </form>

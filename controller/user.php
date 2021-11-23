@@ -1,6 +1,16 @@
 <?php declare(strict_types=1);
+    require_once 'dao/pdo.php';
+    require_once 'dao/user.php';
+    require_once 'auth.php';
 
     function index() {
+        login_required();
+        global $chitietuser;
+
+        // $_SESSION['user']
+        $id_user = $_SESSION['user'];
+        
+        $chitietuser = getUserById($id_user);
         return DEFAULT_VIEW . 'user/index.php';
     }
 
@@ -12,10 +22,7 @@
         return DEFAULT_VIEW . 'user/follows.php';
     }
 
-    function info() {
-        return DEFAULT_VIEW . 'user/info.php';
-    }
-
     function changepassword() {
         return DEFAULT_VIEW . 'user/changepassword.php';
     }
+    

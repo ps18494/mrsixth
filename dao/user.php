@@ -20,7 +20,7 @@ function getAllUserByVaiTro($vaiTro)
 
 // Thêm người dùng
 function insertUser(
-    $ten,
+    $username,
     $matKhau,
     $ngaySinh,
     $email,
@@ -31,11 +31,11 @@ function insertUser(
 )
 {
     $sql = "INSERT INTO `user`".
-        " (`ten`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)".
+        " (`id_user`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)".
         " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
-        $ten,
+        $username,
         $matKhau,
         $ngaySinh,
         $email,
@@ -96,6 +96,14 @@ function checkUserByEmail($email)
 {
     $sql = "SELECT COUNT(`id_user`) FROM `user` WHERE `email` = ?";
     $result = pdo_query_value($sql, $email);
+    return $result > 0;
+}
+
+// Kiểm tra người dùng có tồn tại bởi tên đăng nhập (id_user)
+function checkUserById($id)
+{
+    $sql = "SELECT COUNT(`id_user`) FROM `user` WHERE `id_user` = ?";
+    $result = pdo_query_value($sql, $id);
     return $result > 0;
 }
 

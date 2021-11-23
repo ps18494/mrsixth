@@ -93,3 +93,23 @@
         // Return the result
         return $words;
     }
+
+
+    // https://www.w3schools.com/php/php_form_validation.asp
+    // Xóa khoảng trắng dư thừa
+    // Xóa dấu gạch chéo /
+    // Chuyển đổi kí tự đặc biệt thành HTML entities
+    function clean_input($input) {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+        return $input;
+    }
+
+    
+    function replace_accents($string)
+    {
+        $transliterator  = Transliterator::createFromRules(':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;', Transliterator::FORWARD);
+        $string = $transliterator->transliterate($string);
+        return $string;
+    }

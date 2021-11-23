@@ -1,15 +1,17 @@
 <?php declare(strict_types=1);
     require_once 'dao/pdo.php';
     require_once 'dao/user.php';
+    require_once 'auth.php';
+
     function index() {
-         if(isset($_GET['id_user'])== true && $_GET['id_user']!= ""){
-            global $chitietuser;
-            $id_user = $_GET['id_user'];
-            $chitietuser = getUserById($id_user);
-            return DEFAULT_VIEW . 'user/index.php';
-        }else{
-            header("location: ". ROOT_DOMAIN);
-        }
+        login_required();
+        global $chitietuser;
+
+        // $_SESSION['user']
+        $id_user = $_SESSION['user'];
+        
+        $chitietuser = getUserById($id_user);
+        return DEFAULT_VIEW . 'user/index.php';
     }
 
     function thembenh() {

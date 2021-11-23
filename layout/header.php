@@ -34,10 +34,25 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
         </form>
-        <form>
-            <button class="btn-dang-nhap btn btn-outline-success" type="submit">Đăng ký</button>
-            <button class="btn-dang-ky btn btn-outline-success" type="submit">Đăng nhập</button>
-        </form>
+        <?php if (is_authenticated()) { ?> 
+            <div>
+                <a href="<?= ROOT_DOMAIN . "/user/"?>">
+                    <button class="btn-dang-nhap btn btn-outline-success" type="submit">Tài khoản</button>
+                </a>
+                <a href="<?= ROOT_DOMAIN . "/logout/" ?>">
+                    <button class="btn-dang-ky btn btn-outline-success" type="submit">Đăng xuất</button>
+                </a>
+            </div>
+        <?php } else { ?>
+            <div>
+                <a href="<?= ROOT_DOMAIN . "/signup/"?>">
+                    <button class="btn-dang-nhap btn btn-outline-success" type="submit">Đăng ký</button>
+                </a>
+                <a href="<?= ROOT_DOMAIN . "/login/"?>">
+                    <button class="btn-dang-ky btn btn-outline-success" type="submit">Đăng nhập</button>
+                </a>
+            </div>
+        <?php } ?>
     </div>
 </nav>
 <!-- end -->

@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
-
+    session_start();
     require_once "global.php";
+    require_once "auth.php";
     $controller = getRequestController(ROOT_LEVEL, DEFAULT_CONTROLLER);
     require_once DEFAULT_CONTROLLER . $controller . '.php';
     $action = getRequestAction(ROOT_LEVEL);

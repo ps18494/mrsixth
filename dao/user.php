@@ -48,10 +48,10 @@ function insertUser(
 }
 
 // Chi tiết người dùng theo id
-function getUserById($id)
+function getUserById($id_user)
 {
     $sql = "SELECT * FROM `user` WHERE `id_user` = ?";
-    $result = pdo_query_one($sql, $id);
+    $result = pdo_query_one($sql, $id_user);
     return $result;
 }
 
@@ -102,7 +102,7 @@ function checkUserByEmail($email)
 
 
 // Doi mat khau
-function changePassword($id, $newPwd)
+function updatePassword()
 {
     $sql = "UPDATE `user` SET `mat_khau` = ? WHERE `id_user` = ?";
     $result = pdo_execute($sql);

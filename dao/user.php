@@ -55,6 +55,15 @@ function getUserById($id)
     return $result;
 }
 
+
+// Chi tiết người dùng theo id_user, password
+function getUserByIdAndPassword($id, $password)
+{
+    $sql = "SELECT * FROM `user` WHERE (`id_user`= ? AND `mat_khau` = ?)";
+    $result = pdo_query_one($sql, $id, $password);
+    return $result;
+}
+
 // Cập nhật thông tin người dùng
 function updateUser(
     $ten, 

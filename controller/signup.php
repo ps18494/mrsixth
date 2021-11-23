@@ -1,8 +1,14 @@
 <?php
     require_once "dao/pdo.php";
     require_once "dao/user.php";
-
+    require_once "auth.php";
+    
     function index() {
+        if (is_authenticated())
+        {
+            header("location: ". ROOT_DOMAIN);
+        }
+
         function validateUserName($userName) {
             $userNamePattern = '/^[a-z][a-z0-9]{5,19}$/';
             $errors = [];

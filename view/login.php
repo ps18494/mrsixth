@@ -1,40 +1,35 @@
-<?php declare(strict_types=1);
-
-    echo "Login Page";
-    
-?>
-<head>
-        <link rel="stylesheet" href="<?= ASSET . "css/login.css"?>"/>
-
-</head>
-     <div class="tab-login">
-            <form action="#">
-                <div class="title"><h2>Log in</h2></div>
-
-            <div class="webflow-style-input" id="box">
-                <input class="" type="username" placeholder="User name">
-            </div>
-            <div class="webflow-style-input" id="box">
-                <input class="" type="password" placeholder="Password"></input>
-              
-            </div>
-             <input class="form-check-input" type="checkbox"> Remember me  
-            <div class="button-login" id="box">
-               <button><span>Log in</span></i></button>
-            </div>
-            </form>
-
-            <!--<a href="" class="pass-forgot">Forgot your password?</a>-->
-            <p href="" class="continue">or continue with</p>
-
-            <div class="box"  id="box">
-               <button><i class="fa fa-google" style="font-size:25px;"></i><span>oogle</span></button>
-            </div>
-            <div class="box"  id="box">
-                <button>Bạn chưa có tài khoản?</button>
-            </div>
-            <hr>
-            <div class="box"  id="box">
-                <button>Quên mật khẩu</button>
-            </div>
+<div class="container p-2 my-4 rounded">
+    <h1 class="text-center text-capitalize">Đăng nhập</h1>
+    <?php if (isset($MESSAGES)) { ?>
+        <div class="px-4">
+            <?php foreach($MESSAGES as $msg) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= $msg ?>
+                </div>
+            <?php } // End loop $MESSAGE ?>
         </div>
+    <?php } // End if?> 
+    <form class="px-4" method="POST" id="formdangnhap"  autocomplete="off">
+        <div>
+            <label for="username">Tên đăng nhập</label> <br>
+            <input class="form-control" type="text" id="name" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu</label> <br>
+            <input class="form-control" type="password" id="pass" name="password">
+        </div>
+        <div class="form-group text-center mx-auto">
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </div>
+    </form>
+    <div class="px-4">
+        <div>Chưa có tài khoản: <a class="text-primary" href="<?= ROOT_DOMAIN . "/signup"?>">Đăng ký</a></div>
+        <div>Đăng nhập bằng: <a class="text-primary" href="<?= ROOT_DOMAIN . "/signup"?>">Google</a></div>
+        <div><a class="text-primary" href="<?= ROOT_DOMAIN . "/forget_password"?>">Quên mật khẩu</a></div>
+    </div>
+</div>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

@@ -22,3 +22,7 @@
     define('ADMIN_VIEW', __DIR__ . '/admin/view/');
     define("DEFAULT_LAYOUT", __DIR__ . "/layout/");
     define("ADMIN_LAYOUT", __DIR__ . "/admin/layout/");
+    
+    // Different from UPLOADS is: system path like C:\\xamp\\htdocs\\mrsixth
+    define('UPLOADS_FOLDER', __DIR__ . '/uploads/');
+    

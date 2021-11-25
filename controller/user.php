@@ -34,11 +34,12 @@
             $sdt        = $_POST['sdt'];
             $email      = $_POST['email'];
             $tinhTrangSucKhoe = $_POST['tinhtrangsuckhoe'];
-            $hinhAnh    = $_POST['hinh_anh'];
+            $hinhAnh    = upload("hinh_anh", "img_user"); //trả về tên ảnh
+            
             $id_user    = $_POST['id_user'] ;
             updateUser($ten, $ngay_sinh, $email, $sdt, $hinhAnh, $tinhTrangSucKhoe, $id_user); //
             $chitiet = getUserById($id_user);
-             header("location: ". ROOT_DOMAIN . "/user/");
+            header("location: ". ROOT_DOMAIN . "/user/");
         }
             return DEFAULT_VIEW . 'user/thongtincanhan.php';
     }
@@ -57,13 +58,13 @@
             $chitiet = getUserByIdAndPassword($id_user, $password);
             
             if(empty($chitiet)){
-                $errors .= "Mật khẩu không chính xác! <br>";
+                $errors .= "Mật khẩu cữ không chính xác! <br>";
             }
             if(strlen($newpass) < 6 || strlen($newpass) > 32){
-               $errors .= "Mật khẩu phải từ 8 đến 32 kí tự ! <br>";
+               $errors .= "Mật khẩu mới phải từ 8 đến 32 kí tự ! <br>";
             }
             if($newpass != $repass){
-                $errors .= "Xác nhận mật khẩu không chính xác!";
+                $errors .= "Xác nhận mật khẩu mới không chính xác!";
             }
             
             if($errors == ""){

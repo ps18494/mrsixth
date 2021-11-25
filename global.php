@@ -173,7 +173,7 @@
     function upload($fileInput, $folder="default")
     {
         try {
-        
+ 
             // Undefined | Multiple Files | $_FILES Corruption Attack
             // If this request falls under any of them, treat it invalid.
             if (
@@ -182,7 +182,7 @@
             ) {
                 throw new RuntimeException('Invalid parameters.');
             }
-
+ 
             // Check $_FILES[$fileInput]['error'] value.
             switch ($_FILES[$fileInput]['error']) {
                 case UPLOAD_ERR_OK:
@@ -195,12 +195,12 @@
                 default:
                     throw new RuntimeException('Unknown errors.');
             }
-
+ 
             // You should also check filesize here.
             if ($_FILES[$fileInput]['size'] > 1000000) {
                 throw new RuntimeException('Exceeded filesize limit.');
             }
-
+ 
             // DO NOT TRUST $_FILES[$fileInput]['mime'] VALUE !!
             // Check MIME Type by yourself.
             $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -215,7 +215,7 @@
             )) {
                 throw new RuntimeException('Invalid file format.');
             }
-
+ 
             // You should name it uniquely.
             // DO NOT USE $_FILES[$fileInput]['name'] WITHOUT ANY VALIDATION !!
             // On this example, obtain safe unique name from its binary data.
@@ -223,21 +223,20 @@
             if (!is_dir($upload_folder)){
                 mkdir($upload_folder);
             }
+            $filename = sha1_file($_FILES[$fileInput]['tmp_name']) . "." . $ext;
             if (!move_uploaded_file(
                 $_FILES[$fileInput]['tmp_name'],
-                sprintf($upload_folder . '%s.%s',
-                    sha1_file($_FILES[$fileInput]['tmp_name']),
-                    $ext
-                )
+                $upload_folder . $filename
             )) {
                 throw new RuntimeException('Failed to move uploaded file.');
             }
-
+ 
+            return $filename;
             // echo 'File is uploaded successfully.';
-
+ 
         } catch (RuntimeException $e) {
-
+ 
             // echo $e->getMessage();
-
+ 
         }
     }

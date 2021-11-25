@@ -3,7 +3,13 @@
             <div class="url-web"><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
             <div class="box-thongtin">
                 <?php extract($chitietuser) ?> 
-                <div class="img-thongtin"><img src="uploads/diseases/005aec2372e2d72819b3c33f48d6f3c3bd9f823d.jpeg" alt="Ảnh đại diện của <?=$ten?>"/></div>
+                <div class="img-thongtin">
+                    <?php if($hinh_anh != ""){ ?>
+                        <img src="<?=UPLOADS. "/img_user/".$hinh_anh.""?>"/>
+                    <?php }else{ ?>
+                        <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/16-512.png">
+                    <?php }?>
+                </div>
                 <div class="thongtin">
                     <table class="table">
                        

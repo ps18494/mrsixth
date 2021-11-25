@@ -1,8 +1,16 @@
 .tab-ttcn{
     width: 80%;
     margin: auto;
-
     font-size: 1.3rem;
+    }
+    .tab-ttcn a button{
+        border: none;
+        border-radius: 1%;
+        padding: 1%;
+        background: #d8e2f4;
+    }
+    .tab-ttcn a button:hover{
+        background: #bacdef;
     }
     .tab-ttcn .box-thongtin{
         font-family: 'Time News Roman';

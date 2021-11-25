@@ -57,10 +57,10 @@ function getUserById($id_user)
 
 
 // Chi tiết người dùng theo id_user, password
-function getUserByIdAndPassword($id, $password)
+function getUserByIdAndPassword($id_user, $password)
 {
     $sql = "SELECT * FROM `user` WHERE (`id_user`= ? AND `mat_khau` = ?)";
-    $result = pdo_query_one($sql, $id, $password);
+    $result = pdo_query_one($sql, $id_user, $password);
     return $result;
 }
 
@@ -72,7 +72,7 @@ function updateUser(
     $sdt,
     $hinhAnh,
     $tinhTrangSucKhoe,
-    $id
+    $id_user
 )
 {
     $sql = "UPDATE `user` SET".
@@ -86,7 +86,7 @@ function updateUser(
         $sdt,
         $hinhAnh,
         $tinhTrangSucKhoe,
-        $id
+        $id_user
     );
     return $result;
 }
@@ -119,10 +119,10 @@ function checkUserById($id)
 
 
 // Doi mat khau
-function updatePassword()
+function updatePassword($newpass, $id_user )
 {
     $sql = "UPDATE `user` SET `mat_khau` = ? WHERE `id_user` = ?";
-    $result = pdo_execute($sql);
+    $result = pdo_execute($sql, $newpass, $id_user);
     return $result;
 }
 

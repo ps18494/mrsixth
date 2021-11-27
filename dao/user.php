@@ -11,12 +11,10 @@ function getAllUser()
 // Danh sách người dùng theo vai trò
 function getAllUserByVaiTro($vaiTro)
 {
-
     $sql = "SELECT * FROM `user` WHERE `vai_tro` = ?";
     $result = pdo_query($sql);
     return $result;
 }
-
 
 // Thêm người dùng
 function insertUser(
@@ -28,10 +26,10 @@ function insertUser(
     $hinhAnh,
     $vaiTro,
     $tinhTrangSucKhoe
-)
-{
-    $sql = "INSERT INTO `user`".
-        " (`id_user`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)".
+) {
+    $sql =
+        "INSERT INTO `user`" .
+        " (`id_user`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)" .
         " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
@@ -55,7 +53,6 @@ function getUserById($id_user)
     return $result;
 }
 
-
 // Chi tiết người dùng theo id_user, password
 function getUserByIdAndPassword($id_user, $password)
 {
@@ -66,21 +63,21 @@ function getUserByIdAndPassword($id_user, $password)
 
 // Cập nhật thông tin người dùng
 function updateUser(
-    $ten, 
+    $ten,
     $ngaySinh,
     $email,
     $sdt,
     $hinhAnh,
     $tinhTrangSucKhoe,
     $id_user
-)
-{
-    $sql = "UPDATE `user` SET".
-        " `ten` = ?, `ngay_sinh` = ?, `email` = ?, `sdt` = ?, `hinh_anh` = ?, `tinh_trang_suc_khoe` = ?".
+) {
+    $sql =
+        "UPDATE `user` SET" .
+        " `ten` = ?, `ngay_sinh` = ?, `email` = ?, `sdt` = ?, `hinh_anh` = ?, `tinh_trang_suc_khoe` = ?" .
         "WHERE `id_user` = ?";
     $result = pdo_execute(
         $sql,
-        $ten, 
+        $ten,
         $ngaySinh,
         $email,
         $sdt,
@@ -90,7 +87,6 @@ function updateUser(
     );
     return $result;
 }
-
 
 // Xóa người dùng
 function deleteUser($id)
@@ -116,13 +112,10 @@ function checkUserById($id)
     return $result > 0;
 }
 
-
-
 // Doi mat khau
-function updatePassword($newpass, $id_user )
+function updatePassword($newpass, $id_user)
 {
     $sql = "UPDATE `user` SET `mat_khau` = ? WHERE `id_user` = ?";
     $result = pdo_execute($sql, $newpass, $id_user);
     return $result;
 }
-

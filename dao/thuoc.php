@@ -7,6 +7,14 @@ function getAllThuoc()
     $result = pdo_query($sql);
     return $result;
 }
+// Lấy 10 thuốc trong danh sách mai mốt làm phân trang
+
+function get8Thuoc()
+{
+    $sql = "SELECT * FROM `thuoc` LIMIT 0,8";
+    $result = pdo_query($sql);
+    return $result;
+}
 
 // Thêm thuốc
 function insertThuoc(
@@ -24,7 +32,7 @@ function insertThuoc(
 ) {
     $sql =
         "INSERT INTO `thuoc`" .
-        " (`ten_thuoc`, `dang_bao_che`, `nhom_thuoc`, `hinh_anh`, `lieudung_cachdung`, `than_trong`, `chi_dinh`, `chong_chi_dinh`, `tai_lieu_tham_khao`, `tac_dung_phu`, `chu_y` " .
+        "(ten_thuoc, dang_bao_che, nhom_thuoc, hinh_anh, lieudung_cachdung, than_trong, chi_dinh, chong_chi_dinh, tai_lieu_tham_khao, tac_dung_phu, chu_y)" .
         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
@@ -92,7 +100,7 @@ function updateThuoc(
 function deleteThuoc($id)
 {
     $sql = "DELETE FROM `thuoc` WHERE `id_thuoc` = ?";
-    $result = pdo_execute($sql);
+    $result = pdo_execute($sql, $id);
     return $result;
 }
 

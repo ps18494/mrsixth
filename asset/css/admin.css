@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&family=Roboto+Slab&display=swap');
+:root {
+    /* color */
+    --blue: #91B6F9;
+    --white-blue: #D8E2F4;
+    --white: #FFFFFF;
+    --dark-blue: #061837;
+    --light-blue: #312EBD;
+    --black: #00000057;
+    --blur-blue: #97b1e5;
+    --black-blue: #0Ex228F;
+    /* font-family */
+    --open-san: 'Open Sans', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
+    --roboto-slab: 'Roboto Slab', serif;
+}
+
+.ds-thuoc {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ds-thuoc th {
+    padding: 5px;
+}
+
+.text {
+    max-width: 200px;
+    max-height: 100px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.btn-function {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+/* add drug */
+
+.wrapper {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.add-drug {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.label-add-drug {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.label-add-drug textarea {
+    width: 100%;
+    height: 75px;
+}
+
+.btn-add-drug {
+    margin: 0 auto;
+}
+
+
+/* end add drug */
+
+
+/* table-update-drug */
+
+.form-add-drug {
+    padding: 30px 0;
+}
+
+.info-drug {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-update-drug {
+    position: relative;
+    left: 48%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.detail-drug-by-id {
+    padding: 20px 30px;
+    height: 100%;
+    width: 100%;
+}
+
+
+/*  */

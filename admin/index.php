@@ -10,3 +10,5 @@
     $TITLE = "Trang quan tri - Mr.Sixth";
 
     require_once ADMIN_LAYOUT . "default.php";
+
+?>

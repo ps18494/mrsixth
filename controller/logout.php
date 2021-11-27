@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    unset($_SESSION['username']);
-    unset($_SESSION['role']);
-    session_destroy();
-    header("Location: ". ROOT_DOMAIN);
+session_start();
+unset($_SESSION["username"]);
+unset($_SESSION["role"]);
+session_destroy();
+header("Location: " . ROOT_DOMAIN);

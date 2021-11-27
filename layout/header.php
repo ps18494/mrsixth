@@ -20,13 +20,6 @@
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/tintuc"?>">Tin tức</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tin tức</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
-                </div>
-            </li>
         </ul>
         <form class="header-search-form" action="<?= ROOT_DOMAIN . "/benh/timkiem"?>">
             <div class="d-flex justify-between ">

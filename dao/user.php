@@ -11,16 +11,14 @@ function getAllUser()
 // Danh sách người dùng theo vai trò
 function getAllUserByVaiTro($vaiTro)
 {
-
     $sql = "SELECT * FROM `user` WHERE `vai_tro` = ?";
     $result = pdo_query($sql);
     return $result;
 }
 
-
 // Thêm người dùng
 function insertUser(
-    $ten,
+    $username,
     $matKhau,
     $ngaySinh,
     $email,
@@ -28,14 +26,14 @@ function insertUser(
     $hinhAnh,
     $vaiTro,
     $tinhTrangSucKhoe
-)
-{
-    $sql = "INSERT INTO `user`".
-        " (`ten`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)".
+) {
+    $sql =
+        "INSERT INTO `user`" .
+        " (`id_user`, `mat_khau`, `ngay_sinh`, `email`, `sdt`, `hinh_anh`, `vai_tro`, `tinh_trang_suc_khoe`)" .
         " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
-        $ten,
+        $username,
         $matKhau,
         $ngaySinh,
         $email,
@@ -48,40 +46,47 @@ function insertUser(
 }
 
 // Chi tiết người dùng theo id
-function getUserById($id)
+function getUserById($id_user)
 {
     $sql = "SELECT * FROM `user` WHERE `id_user` = ?";
-    $result = pdo_query_one($sql, $id);
+    $result = pdo_query_one($sql, $id_user);
+    return $result;
+}
+
+// Chi tiết người dùng theo id_user, password
+function getUserByIdAndPassword($id_user, $password)
+{
+    $sql = "SELECT * FROM `user` WHERE (`id_user`= ? AND `mat_khau` = ?)";
+    $result = pdo_query_one($sql, $id_user, $password);
     return $result;
 }
 
 // Cập nhật thông tin người dùng
 function updateUser(
-    $ten, 
+    $ten,
     $ngaySinh,
     $email,
     $sdt,
     $hinhAnh,
     $tinhTrangSucKhoe,
-    $id
-)
-{
-    $sql = "UPDATE `user` SET".
-        " `ten` = ?, `ngay_sinh` = ?, `email` = ?, `sdt` = ?, `hinh_anh` = ?, `tinh_trang_suc_khoe` = ?".
+    $id_user
+) {
+    $sql =
+        "UPDATE `user` SET" .
+        " `ten` = ?, `ngay_sinh` = ?, `email` = ?, `sdt` = ?, `hinh_anh` = ?, `tinh_trang_suc_khoe` = ?" .
         "WHERE `id_user` = ?";
     $result = pdo_execute(
         $sql,
-        $ten, 
+        $ten,
         $ngaySinh,
         $email,
         $sdt,
         $hinhAnh,
         $tinhTrangSucKhoe,
-        $id
+        $id_user
     );
     return $result;
 }
-
 
 // Xóa người dùng
 function deleteUser($id)
@@ -99,13 +104,18 @@ function checkUserByEmail($email)
     return $result > 0;
 }
 
-
-
-// Doi mat khau
-function changePassword($id, $newPwd)
+// Kiểm tra người dùng có tồn tại bởi tên đăng nhập (id_user)
+function checkUserById($id)
 {
-    $sql = "UPDATE `user` SET `mat_khau` = ? WHERE `id_user` = ?";
-    $result = pdo_execute($sql);
-    return $result;
+    $sql = "SELECT COUNT(`id_user`) FROM `user` WHERE `id_user` = ?";
+    $result = pdo_query_value($sql, $id);
+    return $result > 0;
 }
 
+// Doi mat khau
+function updatePassword($newpass, $id_user)
+{
+    $sql = "UPDATE `user` SET `mat_khau` = ? WHERE `id_user` = ?";
+    $result = pdo_execute($sql, $newpass, $id_user);
+    return $result;
+}

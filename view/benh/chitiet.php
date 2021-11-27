@@ -60,7 +60,16 @@ article.chitietbenh section {
         <header>
             <h1 class="my-2 text-uppercase"><?= $ten_benh ?></h1>
         </header>
-
+            <form action="" method="POST">
+                <input type="hidden" name="id_user" value="<?=$id_user?>">
+                <input type="hidden" name="id_benh" value="<?=$id_benh?>">
+                <?php if(empty($user_care)) {?>
+                    <input type="submit" name="care" value="Quân tam">
+                <?php }else{ ?>
+                    <input type="submit" name="delcare" value=" Bouân tam">
+                <?php }?>
+            </form>
+        
         <?php if ($mo_ta) { ?> 
             <section id="mota" title="Mô tả">
                 <?=$mo_ta?>

@@ -1,42 +1,42 @@
 <?php declare(strict_types=1);
 
-
 // Danh sách thuốc
-function getAllThuoc() {
+function getAllThuoc()
+{
     $sql = "SELECT * FROM `thuoc`";
     $result = pdo_query($sql);
     return $result;
 }
 // Lấy 10 thuốc trong danh sách mai mốt làm phân trang
 
-function get8Thuoc(){
+function get8Thuoc()
+{
     $sql = "SELECT * FROM `thuoc` LIMIT 0,8";
     $result = pdo_query($sql);
     return $result;
 }
 
-
 // Thêm thuốc
 function insertThuoc(
-    $tenThuoc, 
+    $tenThuoc,
     $dangBaoChe,
     $nhomThuoc,
     $hinhAnh,
     $lieuDungCachDung,
-    $thanTrong, 
+    $thanTrong,
     $chiDinh,
     $chongChiDinh,
     $taiLieuThamKhao,
     $tacDungPhu,
     $chuY
-) 
-{
-    $sql = "INSERT INTO `thuoc`".
-        "(ten_thuoc, dang_bao_che, nhom_thuoc, hinh_anh, lieudung_cachdung, than_trong, chi_dinh, chong_chi_dinh, tai_lieu_tham_khao, tac_dung_phu, chu_y)".
+) {
+    $sql =
+        "INSERT INTO `thuoc`" .
+        "(ten_thuoc, dang_bao_che, nhom_thuoc, hinh_anh, lieudung_cachdung, than_trong, chi_dinh, chong_chi_dinh, tai_lieu_tham_khao, tac_dung_phu, chu_y)" .
         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
-        $tenThuoc, 
+        $tenThuoc,
         $dangBaoChe,
         $nhomThuoc,
         $hinhAnh,
@@ -52,7 +52,8 @@ function insertThuoc(
 }
 
 // Chi tiết thuốc theo id
-function getThuocById($id) {
+function getThuocById($id)
+{
     $sql = "SELECT * FROM `thuoc` WHERE `id_thuoc` = ?";
     $result = pdo_query_one($sql, $id);
     return $result;
@@ -60,7 +61,7 @@ function getThuocById($id) {
 
 // Cập nhật thuốc
 function updateThuoc(
-    $tenThuoc, 
+    $tenThuoc,
     $dangBaoChe,
     $nhomThuoc,
     $hinhAnh,
@@ -72,14 +73,14 @@ function updateThuoc(
     $tacDungPhu,
     $chuY,
     $id
-) 
-{
-    $sql = "UPDATE `thuoc` SET".
-        " `ten_thuoc` = ?, `dang_bao_che` = ?, `nhom_thuoc` = ?, `hinh_anh` = ?, `lieudung_cachdung` = ?, `than_trong` = ?, `chi_dinh` = ?, `chong_chi_dinh` = ?, `tai_lieu_tham_khao` = ?, `tac_dung_phu` = ?, `chu_y` = ?". 
+) {
+    $sql =
+        "UPDATE `thuoc` SET" .
+        " `ten_thuoc` = ?, `dang_bao_che` = ?, `nhom_thuoc` = ?, `hinh_anh` = ?, `lieudung_cachdung` = ?, `than_trong` = ?, `chi_dinh` = ?, `chong_chi_dinh` = ?, `tai_lieu_tham_khao` = ?, `tac_dung_phu` = ?, `chu_y` = ?" .
         " WHERE `id_thuoc` = ?";
     $result = pdo_execute(
         $sql,
-        $tenThuoc, 
+        $tenThuoc,
         $dangBaoChe,
         $nhomThuoc,
         $hinhAnh,
@@ -96,23 +97,26 @@ function updateThuoc(
 }
 
 // Xóa thuốc theo id
-function deleteThuoc($id) {
+function deleteThuoc($id)
+{
     $sql = "DELETE FROM `thuoc` WHERE `id_thuoc` = ?";
-    $result = pdo_execute($sql,$id);
+    $result = pdo_execute($sql, $id);
     return $result;
 }
 
 // Tìm kiếm thuốc theo tên
-function searchThuocByTen($tenThuoc) {
-    $sql = "SELECT `id_thuoc`, `ten_thuoc`, `hinh_anh`, `dang_bao_che` FROM `thuoc` WHERE `ten_thuoc` LIKE ?";
+function searchThuocByTen($tenThuoc)
+{
+    $sql =
+        "SELECT `id_thuoc`, `ten_thuoc`, `hinh_anh`, `dang_bao_che` FROM `thuoc` WHERE `ten_thuoc` LIKE ?";
     $result = pdo_query($sql, "%$tenThuoc%");
     return $result;
 }
 
 // Kiểm tra thuốc tồn tại theo tên
-function checkExistThuocByTen($tenThuoc) {
+function checkExistThuocByTen($tenThuoc)
+{
     $sql = "SELECT COUNT(`id_thuoc`) FROM `thuoc` WHERE `ten_thuoc` = ?";
     $result = pdo_query_value($sql, $tenThuoc);
     return $result > 0;
 }
-

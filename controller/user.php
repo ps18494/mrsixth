@@ -1,16 +1,21 @@
 <?php declare(strict_types=1);
     require_once 'dao/pdo.php';
     require_once 'dao/user.php';
+    require_once 'dao/quantam.php';
     require_once 'auth.php';
 
     function index() {
         login_required();
-        global $chitietuser;
+        global $chitietuser, $listCare, $countBenh;
 
         // $_SESSION['user']
         $id_user = $_SESSION['user'];
-        
         $chitietuser = getUserById($id_user);
+        //số bệnh đã quan tâm;
+        $countBenh = getCOunt($id_user);
+        //danh sách bệnh đã quan tâm
+        $listCare = getDanhSachQuanTamByUserId($id_user);
+        
         return DEFAULT_VIEW . 'user/index.php';
     }
 
@@ -34,11 +39,15 @@
             $sdt        = $_POST['sdt'];
             $email      = $_POST['email'];
             $tinhTrangSucKhoe = $_POST['tinhtrangsuckhoe'];
-            $hinhAnh    = upload("hinh_anh", "img_user"); //trả về tên ảnh
             
+            if (!empty($_FILES['hinh_anh']['name'])){
+                $hinh_anh    = upload("hinh_anh", "img_user"); //trả về tên ảnh
+            }else{
+                $hinh_anh = $chitiet['hinh_anh'];
+            }
+            var_dump($_FILES['hinh_anh']);
             $id_user    = $_POST['id_user'] ;
-            updateUser($ten, $ngay_sinh, $email, $sdt, $hinhAnh, $tinhTrangSucKhoe, $id_user); //
-            $chitiet = getUserById($id_user);
+            updateUser($ten, $ngay_sinh, $email, $sdt, $hinh_anh, $tinhTrangSucKhoe, $id_user); //
             header("location: ". ROOT_DOMAIN . "/user/");
         }
             return DEFAULT_VIEW . 'user/thongtincanhan.php';

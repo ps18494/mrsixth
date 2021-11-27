@@ -3,14 +3,14 @@
     <form enctype="multipart/form-data" class="px-4" action="" method="POST" id="">
         <div class="form-group">
             <div class="avt">
-                <?php if($hinh_anh != ""){ ?>
+                <?php if(isset($hinh_anh)== true){ ?>
                     <div style="width: 40%"><img style="width: 80%; height: 230px; border-radius: 120px" src="<?=UPLOADS . "/img_user/"."$hinh_anh."?>"></div>
                 <?php }else{ ?>
                     <div style="width: 40%"><img style="width: 80%; height: 200px; border-radius: 120px" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/16-512.png"></div>
                 <?php } ?>
                 <label class="uploadLabel" style="height: 40px">
                     <i class="fa fa-upload"></i>
-                    <input type="file"  name="hinh_anh" class="uploadButton"/>
+                    <input type="file"  name="hinh_anh" value="<?=$hinh_anh?>" class="uploadButton"/>
                     Thay đổi ảnh đại diện
                 </label>
             </div>

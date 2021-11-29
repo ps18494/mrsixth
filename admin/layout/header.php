@@ -19,8 +19,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bệnh</a>
         <div class="dropdown-menu" aria-labelledby="dropdownId">
-          <a class="dropdown-item" href="#">Thêm</a>
-          <a class="dropdown-item" href="#">Danh sách</a>
+          <a class="dropdown-item" href="<?=ROOT_DOMAIN . "/admin/benh/them"?>">Thêm</a>
+          <a class="dropdown-item" href="<?=ROOT_DOMAIN . "/admin/benh/danhsach"?>">Danh sách</a>
         </div>
       </li>
       <li class="nav-item dropdown">

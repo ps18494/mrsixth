@@ -11,7 +11,7 @@ function getAllThuoc()
 
 function get8Thuoc()
 {
-    $sql = "SELECT * FROM `thuoc` LIMIT 0,8";
+    $sql = "SELECT * FROM `thuoc` where  1 ORder by id_thuoc desc ";
     $result = pdo_query($sql);
     return $result;
 }

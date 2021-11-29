@@ -1,13 +1,20 @@
 <?php declare(strict_types=1);
 
 // Lấy danh sách bệnh
-function getAllBenh(): array
+function getAllBenh($star, $pagesize)
 {
-    $sql = "SELECT * FROM benh";
+    $sql = "SELECT * FROM benh LIMIT $star, $pagesize";
     $result = pdo_query($sql);
     return $result;
 }
 
+//đêm bệnh có trong đb;
+function countBenh(){
+    $sql = "SELECT count(*) FROM benh";
+    $tongRecord = pdo_query_value($sql);
+    settype($tongRecord, "int");
+    return $tongRecord;
+}
 // Thêm bệnh
 function insertBenh(
     $tenBenh,
@@ -72,7 +79,7 @@ function updateBenh(
         "UPDATE `benh` SET " .
         "`ten_benh` = ?, `mo_ta` = ?, `trieu_chung` = ?, `nguyen_nhan` = ?, `phong_ngua` = ?" .
         ",`duong_lay_truyen` = ?, `doi_tuong` = ?, `chan_doan` = ?, `dieu_tri` = ?" .
-        "WHERE id = ?";
+        "WHERE id_benh = ?";
     $result = pdo_execute(
         $sql,
         $tenBenh,
@@ -92,7 +99,7 @@ function updateBenh(
 // Xóa bệnh theo id
 function deleteBenh($id)
 {
-    $sql = "DELETE FROM benh WHERE id = ?";
+    $sql = "DELETE FROM benh WHERE id_benh = ?";
     $result = pdo_execute($sql, $id);
     return $result;
 }

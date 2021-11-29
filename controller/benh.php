@@ -8,8 +8,6 @@ function index()
 {
     return DEFAULT_VIEW . "benh/index.php";
 }
-$benh = getBenhById($id_benh);
-$danhSachAnhBenh = getAnhByIdBenh($id_benh);
 
 function chitiet()
 {

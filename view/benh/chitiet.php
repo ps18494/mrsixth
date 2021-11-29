@@ -1,5 +1,5 @@
-<?php  
-extract($benh); 
+<?php
+extract($benh);
 $maps = [
     "mo_ta" => "Mô tả",
     "trieu_chung" => "Triệu chứng",
@@ -7,7 +7,7 @@ $maps = [
     "phong_ngua" => "Lây truyền",
     "doi_tuong" => "Đối tượng",
     "chan_doan" => "Chẩn đoán",
-    "dieu_tri" => "Điều trị"
+    "dieu_tri" => "Điều trị",
 ];
 ?>
 
@@ -61,18 +61,23 @@ article.chitietbenh section {
             <h1 class="my-2 text-uppercase"><?= $ten_benh ?></h1>
         </header>
             <form action="" method="POST">
-                <input type="hidden" name="id_user" value="<?=$id_user?>">
-                <input type="hidden" name="id_benh" value="<?=$id_benh?>">
-                <?php if(empty($user_care)) {?>
+                <input type="hidden" name="id_user" value="<?= $id_user ?>">
+                <input type="hidden" name="id_benh" value="<?= $id_benh ?>">
+                <?php if (empty($user_care)) { ?>
                     <input type="submit" name="care" value="Quân tam">
-                <?php }else{ ?>
+                <?php } else { ?>
                     <input type="submit" name="delcare" value=" Bouân tam">
-                <?php }?>
+                <?php } ?>
             </form>
+            <div>
+                <a href="<?= ROOT_DOMAIN . "/benh/chinhsua?idbenh=$id_benh" ?>">
+                    <button>Chỉnh sửa</button>
+                </a>
+            </div>
         
         <?php if ($mo_ta) { ?> 
             <section id="mota" title="Mô tả">
-                <?=$mo_ta?>
+                <?= $mo_ta ?>
             </section>    
         <?php } ?>
         <?php if ($danhSachAnhBenh) { ?>
@@ -82,17 +87,21 @@ article.chitietbenh section {
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <?php for($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
+                    <?php for ($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?$index?>"></li>
                     <?php } ?>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?= UPLOADS . "/diseases/" . $danhSachAnhBenh[0]['name']?>" alt="First slide">
+                    <img class="d-block w-100" src="<?= UPLOADS .
+                        "/diseases/" .
+                        $danhSachAnhBenh[0]["name"] ?>" alt="First slide">
                     </div>
-                    <?php for($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
+                    <?php for ($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
                     <div class="carousel-item">
-                    <img class="d-block w-100" src="<?= UPLOADS . "/diseases/" . $danhSachAnhBenh[$index]['name']?>" alt="Second slide">
+                    <img class="d-block w-100" src="<?= UPLOADS .
+                        "/diseases/" .
+                        $danhSachAnhBenh[$index]["name"] ?>" alt="Second slide">
                     </div>
                     <?php } ?>
                 </div>
@@ -110,47 +119,49 @@ article.chitietbenh section {
 
         <?php if ($trieu_chung) { ?> 
             <section id="trieuchung" title="Triệu chứng">
-                <?=$trieu_chung?>
+                <?= $trieu_chung ?>
             </section>    
         <?php } ?>
         
         <?php if ($nguyen_nhan) { ?> 
             <section id="nguyennhan" title="Nguyên nhân">
-                <?=$nguyen_nhan?>
+                <?= $nguyen_nhan ?>
             </section>    
         <?php } ?>
 
         <?php if ($phong_ngua) { ?> 
             <section id="phongngua" title="Phòng ngừa">
-                <?=$phong_ngua?>
+                <?= $phong_ngua ?>
             </section>    
         <?php } ?>
 
         <?php if ($duong_lay_truyen) { ?> 
             <section id="laytruyen" title="Đường lây truyền">
-                <?=$duong_lay_truyen?>
+                <?= $duong_lay_truyen ?>
             </section>    
         <?php } ?>
 
         <?php if ($doi_tuong) { ?> 
             <section id="doituong" title="Đối tượng">
-                <?=$doi_tuong?>
+                <?= $doi_tuong ?>
             </section>    
         <?php } ?>
 
         <?php if ($chan_doan) { ?> 
             <section id="chandoan" title="Chẩn đoán">
-                <?=$chan_doan?>
+                <?= $chan_doan ?>
             </section>    
         <?php } ?>
 
         <?php if ($dieu_tri) { ?> 
             <section id="dieutri" title="Điều trị">
-                <?=$dieu_tri?>
+                <?= $dieu_tri ?>
             </section>    
         <?php } ?>
 
-        <?php } // end if?>
+        <?php }
+// end if
+?>
     </article>
 </div>
 

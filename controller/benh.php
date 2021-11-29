@@ -3,13 +3,12 @@
 require_once "dao/pdo.php";
 require_once "dao/benh.php";
 require_once "dao/quantam.php";
+require_once "dao/dexuat.php";
 
 function index()
 {
     return DEFAULT_VIEW . "benh/index.php";
 }
-$benh = getBenhById($id_benh);
-$danhSachAnhBenh = getAnhByIdBenh($id_benh);
 
 function chitiet()
 {
@@ -67,4 +66,53 @@ function timkiem()
     }
 
     return DEFAULT_VIEW . "benh/timkiem.php";
+}
+
+function chinhsua()
+{
+    login_required();
+    $id_benh = $_POST["idbenh"] ?? $_GET["idbenh"];
+    $id_user = $_SESSION["user"];
+
+    $daChinhSua = kiemTraDeXuatByUserAndBenh($id_benh, $id_user);
+    if ($daChinhSua) {
+        $dexuat = getIdDeXuatByBenhAndUser($id_benh, $id_user);
+        $id_de_xuat = $dexuat["id_de_xuat"];
+        header("Location:" . ROOT_DOMAIN . "/user/chitietdexuat?id_de_xuat=$id_de_xuat");
+    }
+
+    if (isset($_POST["btn-submit"])) {
+        $mo_ta = $_POST["mo_ta"];
+        $trieu_chung = $_POST["trieu_chung"];
+        $nguyen_nhan = $_POST["nguyen_nhan"];
+        $phong_ngua = $_POST["phong_ngua"];
+        $duong_lay_truyen = $_POST["duong_lay_truyen"];
+        $doi_tuong = $_POST["doi_tuong"];
+        $chan_doan = $_POST["chan_doan"];
+        $dieu_tri = $_POST["dieu_tri"];
+        $id_benh = $_POST["idbenh"] ?? $_GET["idbenh"];
+        $id_user = $_SESSION["user"];
+
+        insertDeXuat(
+            $mo_ta,
+            $trieu_chung,
+            $nguyen_nhan,
+            $phong_ngua,
+            $duong_lay_truyen,
+            $doi_tuong,
+            $chan_doan,
+            $dieu_tri,
+            $id_benh,
+            $id_user,
+        );
+        $dexuat = getIdDeXuatByBenhAndUser($id_benh, $id_user);
+
+        header("Location:" . ROOT_DOMAIN . "/user/chitietdexuat?id_de_xuat=" . $dexuat["id_de_xuat"]);
+    } else {
+        global $benh, $user;
+
+        $user = getUserById($id_user);
+        $benh = getBenhById($id_benh);
+        return DEFAULT_VIEW . "benh/chinhsua.php";
+    }
 }

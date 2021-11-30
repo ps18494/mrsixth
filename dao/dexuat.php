@@ -52,7 +52,7 @@ function insertDeXuat(
         $chanDoan,
         $dieuTri,
         $idBenh,
-        $idUser
+        $idUser,
     );
     return $result;
 }
@@ -65,11 +65,40 @@ function getDeXuatById($idDeXuat)
     return $result;
 }
 
-// Cập nhật đề xuất
-function updateDeXuat()
+// Lấy id đề xuất theo bệnh và người dùng
+function getIdDeXuatByBenhAndUser($idBenh, $idUser)
 {
-    $sql = "";
-    $result = pdo_execute($sql);
+    $sql = "SELECT `id_de_xuat` FROM `de_xuat` WHERE (`id_benh` = ? AND `id_user` = ?)";
+    $result = pdo_query_one($sql, $idBenh, $idUser);
+    return $result;
+}
+
+// Cập nhật đề xuất
+function updateDeXuat(
+    $moTa,
+    $trieuChung,
+    $nguyenNhan,
+    $phongNgua,
+    $duongLayTruyen,
+    $doiTuong,
+    $chanDoan,
+    $dieuTri
+) {
+    $sql =
+        "UPDATE `de_xuat` " .
+        "SET `mo_ta`=?, `trieu_chung`=?, `nguyen_nhan`=?, `phong_ngua`=?, `duong_lay_truyen`=?, `doi_tuong`=?, `chan_doan`=?, `dieu_tri` = ?";
+
+    $result = pdo_execute(
+        $sql,
+        $moTa,
+        $trieuChung,
+        $nguyenNhan,
+        $phongNgua,
+        $duongLayTruyen,
+        $doiTuong,
+        $chanDoan,
+        $dieuTri,
+    );
     return $result;
 }
 
@@ -84,8 +113,7 @@ function deleteDeXuat($idDeXuat)
 // Kiểm tra xem người dùng đã đề xuất cho bệnh chưa
 function kiemTraDeXuatByUserAndBenh($idBenh, $idUser)
 {
-    $sql =
-        "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE (`id_benh` = ? AND `id_user` = ?)";
-    $result = pdo_query_value($sql);
-    return $result;
+    $sql = "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE (`id_benh` = ? AND `id_user` = ?)";
+    $result = pdo_query_value($sql, $idBenh, $idUser);
+    return $result > 0;
 }

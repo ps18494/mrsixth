@@ -1,17 +1,17 @@
 
- <div class="tab-ttcn">
-            <div class="url-web"><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
-            <div class="box-thongtin">
+ <div >
+            <div ><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
+            <div >
                 <?php extract($chitietuser) ;?> 
-                <div class="img-thongtin">
+                <div >
                     <?php if($hinh_anh != ""){ ?>
                         <img src="<?=UPLOADS. "/img_user/".$hinh_anh.""?>"/>
                     <?php }else{ ?>
                         <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/16-512.png">
                     <?php }?>
                 </div>
-                <div class="thongtin">
-                    <table class="table">
+                <div >
+                    <table >
                        
                         <tbody>
                             <tr>
@@ -39,9 +39,9 @@
                     <a href="<?=ROOT_DOMAIN . "/user/thongtincanhan"?>" style="margin-left: 5%"><button>Thông tin cá nhân</button></a>
                 </div>
             </div>
-            <div class="box-thongtin">
-                <div class="table-care">
-                    <table class="table table-hover">
+            <div >
+                <div >
+                    <table >
                     <thead>
                         <tr>
                             <th scope="col">STT</th>

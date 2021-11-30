@@ -1,6 +1,6 @@
 <main>
     <a href="#">Trang chủ</a>/<a href="#">Tra cứu</a>/<a href="#">Chi tiết thuốc</a>
-    <div class="nav">
+    <div >
         <ul>
             <li><a href="#">Tổng quan</a></li>
             <li><a href="#">Liều dùng</a></li>
@@ -13,9 +13,9 @@
     <article>
         <a href="#">Chỉnh sửa</a>
         <h2>Tổng quan về thuốc</h2>
-        <div class="content" id="tongquan">
-            <p class="title">Thuốc abc là gì?</p>
-            <div class="text">
+        <div  id="tongquan">
+            <p >Thuốc abc là gì?</p>
+            <div >
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
                 quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -27,36 +27,36 @@
                 magnam aliquam quaerat voluptatem.
             </div>
         </div>
-        <div class="content" id="nguyennhan">
-            <p class="title">Nguyên nhân về bệnh</p>
-            <div class="text">
+        <div  id="nguyennhan">
+            <p >Nguyên nhân về bệnh</p>
+            <div >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat. 
             </div>
         </div>
-        <div class="content" id="trieuchung">
-            <p class="title">Triệu chứng về bệnh</p>
-            <div class="text">
+        <div  id="trieuchung">
+            <p >Triệu chứng về bệnh</p>
+            <div >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat.
             </div>
         </div>
-        <div class="content" id="doituong">
-            <p class="title">Đối tượng nguy cơ</p>
-            <div class="text">
+        <div  id="doituong">
+            <p >Đối tượng nguy cơ</p>
+            <div >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat.
             </div>
         </div>
-        <div class="content" id="bienphap">
-            <p class="title">Biện pháp để điều trị</p>
-            <div class="text">
+        <div  id="bienphap">
+            <p >Biện pháp để điều trị</p>
+            <div >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -65,9 +65,9 @@
         </div>
     </article>
     <aside>
-        <div class="box2">
-            <p class="title">Chú ý khi sử dụng thuốc</p>
-            <div class="chuy">
+        <div >
+            <p >Chú ý khi sử dụng thuốc</p>
+            <div >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris 

@@ -9,10 +9,10 @@
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>
-                <a href="<?= ROOT_DOMAIN . "/singup" ?>">
+                <a href="<?= ROOT_DOMAIN . "/signup/" ?>">
                     <button type="submit">Đăng ký</button>
                 </a>
-                <a href="<?= ROOT_DOMAIN . "/login" ?>">
+                <a href="<?= ROOT_DOMAIN . "/login/" ?>">
                     <button type="submit">Đăng nhập</button>
                 </a>
             </div>
@@ -272,7 +272,7 @@
         </section>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="title">
             <h2>Liên hệ</h2>
             <p>

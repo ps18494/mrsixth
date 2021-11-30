@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 h3 {
     font-family: 'Roboto Mono', monospace;
 }
@@ -45,6 +49,31 @@ body {
     --roboto-slab: 'Roboto Slab', serif;
 }
 
+.scrollToTopBtn {
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 100;
+	background-color: var(--blur-blue);
+	border: none;
+	outline: none;
+	/* border-radius: 50%; */
+	opacity: 0;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 48px;
+	width: 48px;
+	/* also add a translate effect */
+	transform: translateY(10%);
+	/* and a transition */
+	transition: all .5s ease
+}
+.scrollToTopBtn:hover {
+	background-color: var(--black-blue);
+}
+.showBtn {
+	opacity: 1;
+}
 
 /* index */
 

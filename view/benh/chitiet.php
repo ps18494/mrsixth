@@ -51,14 +51,14 @@ article.chitietbenh section {
 </style>
 
 <!-- Table of contents -->
-<div class="d-flex m-0 justify-content-around bg-primary p-2 mb-4 toc d-flex" id="toc">
+<div  id="toc">
 </div>
 <!-- End TOC -->
 
-<div class="container">
-    <article class="chitietbenh">
+<div >
+    <article >
         <header>
-            <h1 class="my-2 text-uppercase"><?= $ten_benh ?></h1>
+            <h1 ><?= $ten_benh ?></h1>
         </header>
             <form action="" method="POST">
                 <input type="hidden" name="id_user" value="<?= $id_user ?>">
@@ -83,35 +83,35 @@ article.chitietbenh section {
         <?php if ($danhSachAnhBenh) { ?>
 
         <!-- Bắt đầu Slilder -->
-        <div class="border rounded">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <div >
+            <div id="carouselExampleIndicators"  data-ride="carousel">
+                <ol >
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" ></li>
                     <?php for ($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?$index?>"></li>
                     <?php } ?>
                 </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?= UPLOADS .
+                <div >
+                    <div >
+                    <img  src="<?= UPLOADS .
                         "/diseases/" .
                         $danhSachAnhBenh[0]["name"] ?>" alt="First slide">
                     </div>
                     <?php for ($index = 1; $index < count($danhSachAnhBenh); $index++) { ?>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="<?= UPLOADS .
+                    <div >
+                    <img  src="<?= UPLOADS .
                         "/diseases/" .
                         $danhSachAnhBenh[$index]["name"] ?>" alt="Second slide">
                     </div>
                     <?php } ?>
                 </div>
-                <a class="carousel-control-prev bg-black" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                <a  href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span  aria-hidden="true"></span>
+                    <span >Previous</span>
                 </a>
-                <a class="carousel-control-next bg-black" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                <a  href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span  aria-hidden="true"></span>
+                    <span >Next</span>
                 </a>
             </div>
         </div>

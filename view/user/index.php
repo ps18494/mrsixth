@@ -2,8 +2,7 @@
  <div class="tab-ttcn">
             <div class="url-web"><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
             <div class="box-thongtin">
-                <?php extract($chitietuser) ;
-                    var_dump($listCare);?> 
+                <?php extract($chitietuser) ;?> 
                 <div class="img-thongtin">
                     <?php if($hinh_anh != ""){ ?>
                         <img src="<?=UPLOADS. "/img_user/".$hinh_anh.""?>"/>
@@ -55,7 +54,7 @@
                             
                                 <tr>
                                     <th scope="row"><?=$i+1?></th>
-                                    <td><?=$listCare[$i]['ten_benh']?></td>
+                                    <td><a href="<?=ROOT_DOMAIN . "/benh/chitiet?idbenh=" . $listCare[$i]['id_benh']?>"><?=$listCare[$i]['ten_benh']?></a></td>
                                 </tr>
                             
                         <?php } ?>

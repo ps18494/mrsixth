@@ -53,6 +53,7 @@ extract($benh); ?>
         <h1>Chỉnh sửa: <span class="text-primary"> <?= $ten_benh ?></span></h1>
         <form method="POST">
             <input type="hidden" name="idbenh" value="<?= $id_benh ?>">
+            <input type="hidden" name="ten_benh" value="<?= $ten_benh ?>">
             <div>
                 <label for="mo_ta">Mô tả</label>
                 <input type="image" src="<?= ASSET .

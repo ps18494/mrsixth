@@ -24,6 +24,16 @@ function getAllDeXuatByUser($idUser)
     return $result;
 }
 
+// Danh sách đề xuất theo trạng thái
+function getAllDeXuatByTrangThai($trangThai, $start=0, $offset=5)
+{
+    $sql = "SELECT `dx`.*, `b`.* FROM `de_xuat` `dx`".
+    "JOIN `benh` `b` ON `b`.`id_benh` = `dx`.`id_benh`".
+    " WHERE `trang_thai` = ?";
+    $result = pdo_query($sql, $trangThai);
+    return $result;
+}
+
 // Thêm đề xuất chỉnh sửa cho một bệnh
 function insertDeXuat(
     $moTa,

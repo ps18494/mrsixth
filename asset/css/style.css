@@ -49,6 +49,35 @@ body {
     --roboto-slab: 'Roboto Slab', serif;
 }
 
+/* Utilities */
+.hightligt-left:hover {
+	border-color: #dee2e6!important;
+	border-left: 4px solid #007bff!important;
+}
+.w-20 {
+	width: 20%;
+}
+.mw-50 {
+	max-width: 50%;
+}
+
+/* Table on contents */
+.toc {
+	display: flex;
+	flex-flow: column;
+	height: 10%;
+	margin-left: 2rem;
+	border-left: 1px solid #dee2e6;
+}
+
+.toc a.active {
+	color: #28a745 !important;
+}
+
+.toc::before {
+	content: "Nội dung";
+}
+
 .scrollToTopBtn {
 	position: fixed;
 	bottom: 20px;
@@ -73,6 +102,18 @@ body {
 }
 .showBtn {
 	opacity: 1;
+}
+
+/* Extend Bootstrap */
+.text-normal {
+	text-transform: none;
+}
+
+/* transition 0.5s */
+.transition {
+	/* transform: translateY(10%); */
+	/* and a transition */
+	transition: all .5s ease
 }
 
 /* index */

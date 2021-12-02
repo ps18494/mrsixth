@@ -74,7 +74,7 @@
                     <p class="card-text card-small">
                         Khách hàng có thể tra cứu bệnh thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "benh/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -84,7 +84,7 @@
                     <p class="card-text">
                         Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "thuoc/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -305,3 +305,4 @@
         </div>
     </div>
 </div>
+<script src="<?= ASSET . "js/index.js"?>"></script>

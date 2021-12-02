@@ -6,7 +6,12 @@ require_once "dao/quantam.php";
 require_once "dao/dexuat.php";
 
 function index()
-{
+{   
+    global $records, $lastChar;
+    
+    $records = getAllBenh2();
+    $lastChar = '';          
+
     return DEFAULT_VIEW . "benh/index.php";
 }
 
@@ -29,6 +34,7 @@ function chitiet()
 
     //quan tam benh;
     if (isset($_POST["care"]) && $_POST["care"]) {
+        login_required();
         $id_user = $_POST["id_user"];
         $id_benh = $_POST["id_benh"];
         insertQuanTam($id_user, $id_benh);
@@ -37,6 +43,7 @@ function chitiet()
 
     //bỏ quan tâm
     if (isset($_POST["delcare"]) && $_POST["delcare"]) {
+        login_required();
         $id_user = $_POST["id_user"];
         $id_benh = $_POST["id_benh"];
         deleteQuanTamByUserId($id_user, $id_benh);

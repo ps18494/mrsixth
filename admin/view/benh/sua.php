@@ -1,8 +1,8 @@
 <div class="wrapper">
-     <?php extract($getbenhbyid)?>
+     <?php extract($getbenhbyid);?>
     <h2>Sửa bệnh: <?=$ten_benh?></h2>
    
-    <form action="<?= ROOT_DOMAIN . "/admin/benh/sua" ?>" method="POST" class="add-drug">
+    <form method="POST" class="add-drug">
         <div class="label-add-drug form-group row">
             <label for="ip1" class="col-sm-1-12 col-form-label">Tên bệnh</label>
             <div class="col-sm-1-12">

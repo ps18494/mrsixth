@@ -24,6 +24,31 @@ function getAllDeXuatByUser($idUser)
     return $result;
 }
 
+//update trang_thai = 1 nếu chấp nhận đề xuất, trang_thai = 2 không chấp nhận đề xuất, trang_thai = 0 -> chờ xét duyệt;
+function updateTrangThai1( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '1' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+function updateTrangThai2( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '2' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+function  updateTrangThai( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '0' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+
+//lấy trạng thái theo id đề xuất;
+function getTrangThai ($idDeXuat){
+    $sql = "SELECT `trang_thai` FROM `de_xuat` WHERE `id_de_xuat` = ?";
+    $result = pdo_query_value($sql, $idDeXuat);
+    settype($result, "int");
+    return $result;
+}
+
 // Danh sách đề xuất theo trạng thái
 function getAllDeXuatByTrangThai($trangThai, $start=0, $offset=5)
 {

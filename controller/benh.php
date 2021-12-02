@@ -89,6 +89,7 @@ function chinhsua()
     }
 
     if (isset($_POST["btn-submit"])) {
+        $ten_benh = $_POST["ten_benh"];
         $mo_ta = $_POST["mo_ta"];
         $trieu_chung = $_POST["trieu_chung"];
         $nguyen_nhan = $_POST["nguyen_nhan"];
@@ -101,6 +102,7 @@ function chinhsua()
         $id_user = $_SESSION["user"];
 
         insertDeXuat(
+            $ten_benh,
             $mo_ta,
             $trieu_chung,
             $nguyen_nhan,

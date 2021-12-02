@@ -19,7 +19,7 @@ function getAllDeXuatByBenh($idBenh)
 // Danh sách đề xuất theo người dùng
 function getAllDeXuatByUser($idUser)
 {
-    $sql = "SELECT `id_de_xuat` FROM `de_xuat` WHERE `id_user`  = ?";
+    $sql = "SELECT `id_de_xuat`, `ten_benh` FROM `de_xuat` WHERE `id_user`  = ?";
     $result = pdo_query($sql, $idUser);
     return $result;
 }
@@ -79,6 +79,7 @@ function getAllDeXuatByTrangThai($trangThai, $start=0, $offset=5)
 
 // Thêm đề xuất chỉnh sửa cho một bệnh
 function insertDeXuat(
+    $tenBenh,
     $moTa,
     $trieuChung,
     $nguyenNhan,
@@ -92,10 +93,11 @@ function insertDeXuat(
 ) {
     $sql =
         "INSERT INTO `de_xuat` " .
-        "(`mo_ta`, `trieu_chung`, `nguyen_nhan`, `phong_ngua`, `duong_lay_truyen`, `doi_tuong`, `chan_doan`, `dieu_tri`, `id_benh`, `id_user`) " .
-        "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        "(`ten_benh`, `mo_ta`, `trieu_chung`, `nguyen_nhan`, `phong_ngua`, `duong_lay_truyen`, `doi_tuong`, `chan_doan`, `dieu_tri`, `id_benh`, `id_user`) " .
+        "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
+        $tenBenh,
         $moTa,
         $trieuChung,
         $nguyenNhan,

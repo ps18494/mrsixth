@@ -8,6 +8,13 @@ function getAllBenh($star, $pagesize)
     return $result;
 }
 
+function getAllBenh2()
+{
+    $sql = "SELECT `ten_benh` FROM benh  ORDER BY `ten_benh` ASC";
+    $result = pdo_query($sql);
+    return $result;
+}
+
 //đêm bệnh có trong đb;
 function countBenh(){
     $sql = "SELECT count(*) FROM benh";

@@ -6,7 +6,12 @@ require_once "dao/quantam.php";
 require_once "dao/dexuat.php";
 
 function index()
-{
+{   
+    global $records, $lastChar;
+    
+    $records = getAllBenh2();
+    $lastChar = '';          
+
     return DEFAULT_VIEW . "benh/index.php";
 }
 

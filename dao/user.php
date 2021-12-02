@@ -11,8 +11,8 @@ function getAllUser()
 // Danh sách người dùng theo vai trò
 function getAllUserByVaiTro($vaiTro)
 {
-    $sql = "SELECT * FROM `user` WHERE `vai_tro` = ?";
-    $result = pdo_query($sql);
+    $sql = "SELECT * FROM user WHERE vai_tro = ?";
+    $result = pdo_query($sql,$vaiTro);
     return $result;
 }
 

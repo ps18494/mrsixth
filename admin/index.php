@@ -7,7 +7,7 @@
 
     // Change view and title in controllers
     $VIEW = call_user_func($action) ?? ADMIN_VIEW . "home/index.php";
-    $TITLE = "Trang quan tri - Mr.Sixth";
+    $TITLE = "Chào mừng bạn đến với trang quản lý của Mr.Sixth";
 
     require_once ADMIN_LAYOUT . "default.php";
 

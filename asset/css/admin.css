@@ -18,6 +18,52 @@
     --roboto-slab: 'Roboto Slab', serif;
 }
 
+
+/* admin-index */
+
+.layout-admin {
+    background: #050a30;
+    width: 100%;
+    min-height: 800px;
+    margin: 0 auto;
+}
+
+.bg-admin {
+    position: relative;
+}
+
+.bg-admin h2 {
+    width: max-content;
+    position: absolute;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 20%;
+    color: var(--white);
+    z-index: 10;
+}
+
+.bg-admin p {
+    width: max-content;
+    position: absolute;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 30%;
+    font-size: 24px;
+    color: var(--white);
+    z-index: 10;
+}
+
+.chart {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* end-index */
+
 .ds-thuoc {
     width: 100%;
     margin: 0 auto;
@@ -155,6 +201,29 @@
     padding: 20px 30px;
     height: 100%;
     width: 100%;
+}
+
+
+/*  */
+
+
+/* danhsach-user */
+
+.ds-user {
+    width: 90%;
+    margin: 40px auto;
+}
+
+
+/* select-danh-sach */
+
+.select-ds {
+    width: 85%;
+    margin: 20px auto;
+}
+
+.select-option {
+    height: 60px;
 }
 
 

@@ -150,7 +150,7 @@ function xoa()
 
     deleteThuoc($id);
 
-    return ADMIN_VIEW . 'thuoc/xoa.php';
+    return ADMIN_VIEW . 'thuoc/danhsach.php';
 }
 
 function timkiem()

@@ -20,17 +20,17 @@
         Danh sách
       </h4>
       <ul class="nav justify-content-center">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="footer-item nav-link" href="#">Trang chủ</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="footer-item nav-link" href="<?= ROOT_DOMAIN . "/thuoc/"?>">Thuốc</a>
         </li>
         <li class="nav-item">
-          <a class="footer-item nav-link" href="#">Thuốc</a>
+          <a class="footer-item nav-link" href="<?= ROOT_DOMAIN . "/benh/"?>">Bệnh</a>
         </li>
         <li class="nav-item">
-          <a class="footer-item nav-link" href="#">Bệnh</a>
-        </li>
-        <li class="nav-item">
-          <a class="footer-item nav-link" href="#">Liên hệ</a>
+          <a class="footer-item nav-link" href="#contact">Liên hệ</a>
         </li>
       </ul>
     </div>

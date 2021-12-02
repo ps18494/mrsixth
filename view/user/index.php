@@ -1,18 +1,17 @@
 
- <div class="tab-ttcn">
-            <div class="url-web"><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
-            <div class="box-thongtin">
-                <?php extract($chitietuser) ;
-                    var_dump($listCare);?> 
-                <div class="img-thongtin">
+ <div >
+            <div ><a href="<?=ROOT_DOMAIN?>">Trang chủ</a>/<a href="#">Thông tin cá nhân</a></div>
+            <div >
+                <?php extract($chitietuser) ;?> 
+                <div >
                     <?php if($hinh_anh != ""){ ?>
                         <img src="<?=UPLOADS. "/img_user/".$hinh_anh.""?>"/>
                     <?php }else{ ?>
                         <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/16-512.png">
                     <?php }?>
                 </div>
-                <div class="thongtin">
-                    <table class="table">
+                <div >
+                    <table >
                        
                         <tbody>
                             <tr>
@@ -40,9 +39,9 @@
                     <a href="<?=ROOT_DOMAIN . "/user/thongtincanhan"?>" style="margin-left: 5%"><button>Thông tin cá nhân</button></a>
                 </div>
             </div>
-            <div class="box-thongtin">
-                <div class="table-care">
-                    <table class="table table-hover">
+            <div >
+                <div >
+                    <table >
                     <thead>
                         <tr>
                             <th scope="col">STT</th>
@@ -55,7 +54,7 @@
                             
                                 <tr>
                                     <th scope="row"><?=$i+1?></th>
-                                    <td><?=$listCare[$i]['ten_benh']?></td>
+                                    <td><a href="<?=ROOT_DOMAIN . "/benh/chitiet?idbenh=" . $listCare[$i]['id_benh']?>"><?=$listCare[$i]['ten_benh']?></a></td>
                                 </tr>
                             
                         <?php } ?>

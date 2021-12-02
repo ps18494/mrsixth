@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-require_once "dao/pdo.php";
 // Danh sách thuốc
 function getAllThuoc($star, $pagesize)
 {

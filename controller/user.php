@@ -4,6 +4,7 @@ require_once "dao/user.php";
 require_once "dao/quantam.php";
 require_once "dao/dexuat.php";
 require_once "dao/benh.php";
+require_once "dao/thongbao.php";
 require_once "auth.php";
 
 function index()
@@ -158,4 +159,27 @@ function chitietdexuat()
     }
 
     return DEFAULT_VIEW . "user/chitietdexuat.php";
+}
+
+
+function notifications()
+{
+    login_required();
+    global $chitietuser, $countBenh, $soDeXuatDoiDuyet, $soDeXuatDuocDuyet, $soDeXuatBiTuChoi;
+    global $notifications;
+
+    $id_user = $_SESSION["user"];
+    $chitietuser = getUserById($id_user);
+    //số bệnh đã quan tâm;
+    $countBenh = getCOunt($id_user);
+    // Số đề xuất đang đợi duyệt
+    $soDeXuatDoiDuyet = demDeXuatByUserAndTrangThai($id_user, 0);
+    // Số đề xuất đã được chấp nhận
+    $soDeXuatDuocDuyet = demDeXuatByUserAndTrangThai($id_user, 1);
+    // Số đề xuất bị từ chối
+    $soDeXuatBiTuChoi = demDeXuatByUserAndTrangThai($id_user, 2);
+    $notifications = getThongBaoByUserId($id_user);
+
+
+    return DEFAULT_VIEW . "/user/notifications.php";
 }

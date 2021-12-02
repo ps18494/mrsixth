@@ -1,3 +1,6 @@
+<?php 
+    require_once "dao/thongbao.php";
+?>
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="<?= ROOT_DOMAIN . "/" ?>">Mr.Sixth</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +38,16 @@
                 <a href="<?= ROOT_DOMAIN . "/logout/" ?>">
                     <button class="btn-dang-ky btn btn-outline-success" type="submit">Đăng xuất</button>
                 </a>
+                <div class="d-inline">
+                    <a class="text-white position-relative" href="<?= ROOT_DOMAIN . "/user/notifications/"?>">
+                        <?php if (kiemTraThongBao($_SESSION['user'])) { ?>
+                        <span class="bg-danger p-1 rounded-circle position-absolute top-0 end-0"></span>
+                        <?php } ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                        </svg>
+                    </a>
+                </div class="d-inline">
             </div>
         <?php } else { ?>
             <div>

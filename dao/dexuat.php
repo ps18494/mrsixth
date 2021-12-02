@@ -24,6 +24,24 @@ function getAllDeXuatByUser($idUser)
     return $result;
 }
 
+
+// Đếm số lượng đề xuất của User
+function demDeXuatByUser($idUser)
+{
+    $sql = "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE `id_user` = ?";
+    $result = pdo_query_value($sql, $idUser);
+    return $result;
+}
+
+
+// Đếm số lượng đề xuất của User theo trạng thái
+function demDeXuatByUserAndTrangThai($idUser, $trangThai)
+{
+    $sql = "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE (`id_user` = ? AND `trang_thai` = ?)";
+    $result = pdo_query_value($sql, $idUser, $trangThai);
+    return $result;
+}
+
 //update trang_thai = 1 nếu chấp nhận đề xuất, trang_thai = 2 không chấp nhận đề xuất, trang_thai = 0 -> chờ xét duyệt;
 function updateTrangThai1( $idDeXuat){
     $sql = "UPDATE `de_xuat` SET `trang_thai` = '1' WHERE `id_de_xuat` = ?";

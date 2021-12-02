@@ -650,7 +650,10 @@ body {
 .social-media {
     display: flex;
 }
-
+.social-media a >img {
+    width: 140px;
+    height: 80px;
+}
 .social-media>img {
     width: 140px;
     height: 80px;

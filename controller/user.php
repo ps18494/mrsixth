@@ -80,7 +80,18 @@ function changepassword()
 {
     login_required();
 
+    global $chitietuser, $countBenh, $soDeXuatDoiDuyet, $soDeXuatDuocDuyet, $soDeXuatBiTuChoi;
     $id_user = $_SESSION["user"];
+    $chitietuser = getUserById($id_user);
+    //số bệnh đã quan tâm;
+    $countBenh = getCOunt($id_user);
+    // Số đề xuất đang đợi duyệt
+    $soDeXuatDoiDuyet = demDeXuatByUserAndTrangThai($id_user, 0);
+    // Số đề xuất đã được chấp nhận
+    $soDeXuatDuocDuyet = demDeXuatByUserAndTrangThai($id_user, 1);
+    // Số đề xuất bị từ chối
+    $soDeXuatBiTuChoi = demDeXuatByUserAndTrangThai($id_user, 2);
+
     global $errors;
     $errors = "";
 
@@ -92,7 +103,7 @@ function changepassword()
         $chitiet = getUserByIdAndPassword($id_user, $password);
 
         if (empty($chitiet)) {
-            $errors .= "Mật khẩu cữ không chính xác! <br>";
+            $errors .= "Mật khẩu cũ không chính xác! <br>";
         }
         if (strlen($newpass) < 6 || strlen($newpass) > 32) {
             $errors .= "Mật khẩu mới phải từ 8 đến 32 kí tự ! <br>";

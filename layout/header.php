@@ -15,7 +15,7 @@
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/benh"?>">Bệnh</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/lienhe"?>">Liên hệ</a>
+                <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/#contact"?>">Liên hệ</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/tintuc"?>">Tin tức</a>

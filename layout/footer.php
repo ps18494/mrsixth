@@ -30,7 +30,7 @@
           <a class="footer-item nav-link" href="<?= ROOT_DOMAIN . "/benh/"?>">Bệnh</a>
         </li>
         <li class="nav-item">
-          <a class="footer-item nav-link" href="#contact">Liên hệ</a>
+          <a class="footer-item nav-link" href="<?= ROOT_DOMAIN . "/#contact"?>">Liên hệ</a>
         </li>
       </ul>
     </div>

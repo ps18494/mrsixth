@@ -38,6 +38,7 @@ function chitiet()
 {
     global $layChitiettin, $listtintuc;
     $id_tin = $_GET["id_tin"] ?? null;
+    tangLuotXemTheoId($id_tin);
     $layChitiettin = getTinTucByID($id_tin);
     $listtintuc = getTintuc();
     return DEFAULT_VIEW . "tintuc/chitiet.php";

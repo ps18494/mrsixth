@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-require_once "dao/pdo.php";
+// require_once "dao/pdo.php";
 // Danh sách tin tức
 function getAllTinTuc($star, $pagesize)
 {
@@ -23,6 +23,7 @@ function countTintuc()
 // Tạo tin tức
 function insertTinTuc(
     $tieuDe,
+    $moTa,
     $hinhAnh,
     $noiDung,
     $ngay,
@@ -32,11 +33,12 @@ function insertTinTuc(
 ) {
     $sql =
         "INSERT INTO `tin_tuc` " .
-        "(`tieu_de`, `hinh_anh`, `noi_dung`, `ngay`, `tac_gia`, `id_benh`, `id_thuoc`)" .
-        " VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "(`tieu_de`, `mo_ta`, `hinh_anh`, `noi_dung`, `ngay`, `tac_gia`, `id_benh`, `id_thuoc`)" .
+        " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $result = pdo_execute(
         $sql,
         $tieuDe,
+        $moTa,
         $hinhAnh,
         $noiDung,
         $ngay,

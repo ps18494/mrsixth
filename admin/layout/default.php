@@ -16,7 +16,9 @@
 <body>
     <?php include(ADMIN_LAYOUT . "header.php"); ?>
 
-    <?php include($VIEW); ?>
+    <div style="min-height: 100vh;">
+        <?php include($VIEW); ?>
+    </div>
 
     <?php include(DEFAULT_LAYOUT . "footer.php"); ?>
     <!-- JavaScript Bundle with Popper -->

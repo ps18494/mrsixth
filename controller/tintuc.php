@@ -6,7 +6,7 @@ function index()
 {
     ///
     global $page, $tongTrang, $from, $to, $dstintuc, $tinXemNhieu, $tinMoiNhat;
-    $pagesize = 3; //tổng tin hiện trong trang
+    $pagesize = 10; //tổng tin hiện trong trang
     $star = 0; //dòng thứ trong db
     $page = 1; //trang muốn xem
     

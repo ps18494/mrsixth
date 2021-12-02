@@ -1,16 +1,25 @@
-<?php
-
-declare(strict_types=1);
-
+<?php declare(strict_types=1);
 // Danh sách thuốc
-function getAllThuoc()
+function getAllThuoc($star, $pagesize)
 {
-    $sql = "SELECT * FROM `thuoc`";
+    $sql = "SELECT * FROM `thuoc` LIMIT $star, $pagesize";
     $result = pdo_query($sql);
     return $result;
 }
 // Lấy 10 thuốc trong danh sách mai mốt làm phân trang
-
+function countThuoc()
+{
+    $sql = "SELECT count(*) FROM thuoc";
+    $tongRecord = pdo_query_value($sql);
+    settype($tongRecord, "int");
+    return $tongRecord;
+}
+function get8Thuoc()
+{
+    $sql = "SELECT * FROM `thuoc` where  1 ORder by id_thuoc desc ";
+    $result = pdo_query($sql);
+    return $result;
+}
 
 // Thêm thuốc
 function insertThuoc(

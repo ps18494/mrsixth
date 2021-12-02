@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
 //
-define("ROOT_LEVEL", 1);
+define("ROOT_LEVEL", 0);
 define("ADMIN_LEVEL", ROOT_LEVEL + 1);
 define("REQUEST_PATH", strtok($_SERVER["REQUEST_URI"], "?"));
-define("ROOT_DOMAIN", "/" . explode("/", REQUEST_PATH)[ROOT_LEVEL]);
+define("ROOT_DOMAIN", "");
 define("ASSET", ROOT_DOMAIN . "/asset/");
 define("UPLOADS", ROOT_DOMAIN . "/uploads/");
 
 // Database config
-define("DB_HOST", "localhost");
+define("DB_HOST", "db");
 define("DB_NAME", "mrsixth");
-define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_USER", "mrsixth");
+define("DB_PASS", "123");
 
 // MVC config
 define("DEFAULT_CONTROLLER", __DIR__ . "/controller/");

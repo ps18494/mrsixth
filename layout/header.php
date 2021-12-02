@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="<?= ROOT_DOMAIN ?>">Mr.Sixth</a>
+    <a class="navbar-brand" href="<?= ROOT_DOMAIN . "/" ?>">Mr.Sixth</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= ROOT_DOMAIN ?>">Trang chủ</a>
+                <a class="nav-link active" aria-current="page" href="<?= ROOT_DOMAIN . "/" ?>">Trang chủ</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/thuoc"?>">Thuốc</a>
@@ -15,7 +15,7 @@
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/benh"?>">Bệnh</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/lienhe"?>">Liên hệ</a>
+                <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/#contact"?>">Liên hệ</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="<?=ROOT_DOMAIN . "/tintuc"?>">Tin tức</a>

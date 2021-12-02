@@ -1,3 +1,6 @@
+uploads/img_user/
+*_test/
+
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db

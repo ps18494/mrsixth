@@ -1,37 +1,33 @@
 <?php declare(strict_types=1);
 require_once "dao/pdo.php";
 require_once "dao/tintuc.php";
+
 function index()
 {
-    $pagesize = 3; //tổng tin hiện trong trang
+    ///
+    global $page, $tongTrang, $from, $to, $dstintuc, $tinXemNhieu, $tinMoiNhat;
+    $pagesize = 10; //tổng tin hiện trong trang
     $star = 0; //dòng thứ trong db
-    global $page;
     $page = 1; //trang muốn xem
+    
     if (isset($_GET["page"]) == true) {
         $page = $_GET["page"];
     }
     $star = ($page - 1) * $pagesize;
 
-    global $dstintuc;
-    $demtintuc = countTintuc(); //đếm số tim có trong db
-    global $tongTrang;
-
     settype($tongTrang, "int");
-    $tongTrang = ceil($demtintuc / $pagesize);
-    global $from;
-    global $to;
+    $dem = countTintuc(); //đếm số tim có trong db
+    $tongTrang = ceil($dem / $pagesize);
+    
     $from = $page - 2;
-    if ($from < 1) {
-        $from = 1;
-    }
     $to = $page + 2;
-    if ($to > $tongTrang) {
-        $to = $tongTrang;
-    }
-
+    if ($from < 1) $from = 1;
+    
+    if ($to > $tongTrang) $to = $tongTrang;
+    
+    /////phân trang end
+    
     $dstintuc = getAllTinTuc($star, $pagesize); //lấy danh sách tin
-
-    global $tinXemNhieu, $tinMoiNhat;
     $tinXemNhieu = tinXemNhieu();
     $tinMoiNhat = tinMoiNhat();
 

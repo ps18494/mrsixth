@@ -61,33 +61,46 @@
         </div>
     </div>
     <div class="d-flex flex-md-row justify-content-around align-items-center my-4">
-        <form method="POST">
-            <?php if ($errors != "") { ?>
-                <div class="alert alert-danger" role="alert">
-                    <?= $errors ?>
-                </div>
-            <?php } ?>
+        <form enctype="multipart/form-data" method="POST">
             <div class="form-group row">
-                <label for="oldpass" class="col-sm-6 col-form-label">Mật khẩu cũ</label>
+                <label for="hinh_anh" class="col-sm-6 col-form-label">Ảnh đại diện</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" name="oldpass" id="oldpass" placeholder="Mật khẩu cũ">
+                    <input type="file" class="form-control" name="hinh_anh" id="hinh_anh" placeholder="Ảnh đại diện">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="newpass" class="col-sm-6 col-form-label">Mật khẩu mới</label>
+                <label for="ten" class="col-sm-6 col-form-label">Tên</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" name="newpass" id="newpass" placeholder="Mật khẩu mới">
+                    <input value="<?=$ten?>" type="text" class="form-control" name="ten" id="ten" placeholder="Họ tên">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="repass" class="col-sm-6 col-form-label">Xác nhận mật khẩu mới</label>
+                <label for="ngay_sinh" class="col-sm-6 col-form-label">Ngày sinh</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" name="repass" id="repass" placeholder="Xác nhận mật khẩu mới">
+                    <input  value="<?=$ngay_sinh?>" type="date" class="form-control" name="ngay_sinh" id="ngay_sinh" placeholder="Ngày sinh">
                 </div>
             </div>
-            
+            <div class="form-group row">
+                <label for="email" class="col-sm-6 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input  value="<?=$email?>" type="text" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="sdt" class="col-sm-6 col-form-label">Số điện thoại</label>
+                <div class="col-sm-10">
+                    <input  value="<?=$sdt?>" type="text" class="form-control" name="sdt" id="sdt" placeholder="Số điện thoại">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="tinhtrangsuckhoe" class="col-sm-6 col-form-label">Tình trạng sức khỏe</label>
+                <div class="col-sm-10">
+                    <textarea type="file" class="form-control" name="tinhtrangsuckhoe" id="tinhtrangsuckhoe" placeholder="Tình trạng sức khỏe"><?=$tinh_trang_suc_khoe?></textarea>
+                </div>
+            </div>
 
             <div >
+                <input type="hidden" name="id_user" value="<?=$id_user?>">
                 <input class="btn btn-primary" type="submit" name="capnhat" value="Cập nhật">
             </div>
         </form>

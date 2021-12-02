@@ -24,7 +24,7 @@
     </form>
     <div class="px-4">
         <div>Chưa có tài khoản: <a class="text-primary" href="<?= ROOT_DOMAIN . "/signup"?>">Đăng ký</a></div>
-        <div>Đăng nhập bằng: <a class="text-primary" href="<?= ROOT_DOMAIN . "/signup"?>">Google</a></div>
+        <!-- <div>Đăng nhập bằng: <a class="text-primary" href="<?= ROOT_DOMAIN . "/signup"?>">Google</a></div> -->
         <div><a class="text-primary" href="<?= ROOT_DOMAIN . "/forget_password"?>">Quên mật khẩu</a></div>
     </div>
 </div>

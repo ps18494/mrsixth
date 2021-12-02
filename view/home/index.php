@@ -4,15 +4,15 @@
         <div class="top-box-banner">
             <div class="left-box-banner">
                 <h2>
-                    3 đời nhà tôi làm bác sĩ đến đời tôi làm cu đơ quèn
+                    MR.SIXTH <br>Trang web tra cứu bệnh/thuốc
                 </h2>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Nhanh chóng, tiện lợi, dễ dàng là những gì mà Mr.Sixth có.
                 </p>
-                <a href="<?= ROOT_DOMAIN . "/singup" ?>">
+                <a href="<?= ROOT_DOMAIN . "/signup/" ?>">
                     <button type="submit">Đăng ký</button>
                 </a>
-                <a href="<?= ROOT_DOMAIN . "/login" ?>">
+                <a href="<?= ROOT_DOMAIN . "/login/" ?>">
                     <button type="submit">Đăng nhập</button>
                 </a>
             </div>
@@ -63,7 +63,7 @@
         <div class="title">
             <h2>Dịch vụ tại Mr.Sixth</h2>
             <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                Hoạt động không vì mục tiêu lợi nhuận, Mr.Sixth ưu tiên các dịch vụ tốt nhất
             </p>
         </div>
         <div class="card-columns">
@@ -74,7 +74,7 @@
                     <p class="card-text card-small">
                         Khách hàng có thể tra cứu bệnh thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "benh/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -84,7 +84,7 @@
                     <p class="card-text">
                         Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "thuoc/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -167,7 +167,7 @@
         <div class="title">
             <h2>Khách hàng nhận xét gì?</h2>
             <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                Nhận xét của người dùng giúp chúng tôi hoàn thiện 
             </p>
         </div>
         <section class="card-detail">
@@ -175,9 +175,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Mai Hồng Phương</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                            Ok
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -191,9 +191,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Nguyễn Trung Tín</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                           10 sao
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -207,9 +207,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Nguyễn Thiết Minh Đức</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                           10đ
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -223,9 +223,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Nguyễn Mạnh Bảo Dương</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                           Great!
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -239,9 +239,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Trần Nguyễn Thanh Đàn</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                           Web hịn <3 
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -255,9 +255,9 @@
                 <div class="card text-center">
                     <img class="card-img-top" src="<?= ASSET . "../asset/icons/drug.png" ?>" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Tra cứu thuốc</h4>
+                        <h4 class="card-title">Tuấn Nguyên Hùng</h4>
                         <p class="card-text">
-                            Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
+                            Xài okla đấy
                         </p>
                         <p>
                             <i class="fa fa-star" style="color: #ffde59; font-size: 30px"></i>
@@ -272,11 +272,11 @@
         </section>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="title">
             <h2>Liên hệ</h2>
             <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                Liên hệ với chúng tôi để nhận được sự quan tâm tốt nhất
             </p>
         </div>
         <div class="box-contact">
@@ -285,7 +285,7 @@
                     Hãy để lại thông tin chi tiết. Chúng tôi sẽ sớm liên lạc với bạn
                 </h3>
                 <p>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text.Contrary to popular belief, Lorem Ipsum is not simply random text.
+                    Điền thông tin liên hệ vào bảng sau đây
                 </p>
             </div>
             <div class="contact-right-box">
@@ -305,3 +305,4 @@
         </div>
     </div>
 </div>
+<script src="<?= ASSET . "js/index.js"?>"></script>

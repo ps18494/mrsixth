@@ -24,6 +24,59 @@ function getAllDeXuatByUser($idUser)
     return $result;
 }
 
+
+// Đếm số lượng đề xuất của User
+function demDeXuatByUser($idUser)
+{
+    $sql = "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE `id_user` = ?";
+    $result = pdo_query_value($sql, $idUser);
+    return $result;
+}
+
+
+// Đếm số lượng đề xuất của User theo trạng thái
+function demDeXuatByUserAndTrangThai($idUser, $trangThai)
+{
+    $sql = "SELECT COUNT(`id_de_xuat`) FROM `de_xuat` WHERE (`id_user` = ? AND `trang_thai` = ?)";
+    $result = pdo_query_value($sql, $idUser, $trangThai);
+    return $result;
+}
+
+//update trang_thai = 1 nếu chấp nhận đề xuất, trang_thai = 2 không chấp nhận đề xuất, trang_thai = 0 -> chờ xét duyệt;
+function updateTrangThai1( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '1' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+function updateTrangThai2( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '2' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+function  updateTrangThai( $idDeXuat){
+    $sql = "UPDATE `de_xuat` SET `trang_thai` = '0' WHERE `id_de_xuat` = ?";
+    $result = pdo_execute($sql, $idDeXuat);
+    return $result;
+}
+
+//lấy trạng thái theo id đề xuất;
+function getTrangThai ($idDeXuat){
+    $sql = "SELECT `trang_thai` FROM `de_xuat` WHERE `id_de_xuat` = ?";
+    $result = pdo_query_value($sql, $idDeXuat);
+    settype($result, "int");
+    return $result;
+}
+
+// Danh sách đề xuất theo trạng thái
+function getAllDeXuatByTrangThai($trangThai, $start=0, $offset=5)
+{
+    $sql = "SELECT `dx`.*, `b`.* FROM `de_xuat` `dx`".
+    "JOIN `benh` `b` ON `b`.`id_benh` = `dx`.`id_benh`".
+    " WHERE `trang_thai` = ?";
+    $result = pdo_query($sql, $trangThai);
+    return $result;
+}
+
 // Thêm đề xuất chỉnh sửa cho một bệnh
 function insertDeXuat(
     $moTa,

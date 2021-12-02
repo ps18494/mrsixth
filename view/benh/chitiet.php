@@ -31,22 +31,6 @@ extract($benh);
     article.chitietbenh section {
         margin: 0.4rem 0 2rem 0;
     }
-
-    .toc {
-        display: flex;
-        flex-flow: column;
-        height: 10%;
-        margin-left: 2rem;
-        border-left: 1px solid #dee2e6;
-    }
-
-    .toc a.active {
-        color: #28a745 !important;
-    }
-
-    .toc::before {
-        content: "Nội dung";
-    }
 </style>
 
 <div class="w-75 mx-auto p-4 mt-4 d-flex flex-row">

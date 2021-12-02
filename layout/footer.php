@@ -3,16 +3,14 @@
     <div class="footer-left col-sm-6">
       <a href="<?= ROOT_DOMAIN ?>" class="navbar-brand">Mr.Sixth</a>
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Dự án được thực hiện bởi nhóm 6 lớp WD16301 <br>
+          Môn Dự Án 1
       </p>
       <div class="social-media">
-        <img src="<?= ASSET . "/icons/facebook.png"?>" alt="facebook-img">
-        <img src="<?= ASSET . "/icons/ig.png"?>" alt="ig-img">
-        <img src="<?= ASSET . "/icons/in.png"?>" alt="in-img">
-        <img src="<?= ASSET . "/icons/twitter.png"?>" alt="twitters-img">
+        <a href="https://www.facebook.com/"><img src="<?= ASSET . "/icons/facebook.png"?>" alt="facebook-img"></a>
+        <a href="https://www.instagram.com/"><img src="<?= ASSET . "/icons/ig.png"?>" alt="ig-img"></a>
+        <a href="https://www.linkedin.com/"><img src="<?= ASSET . "/icons/in.png"?>" alt="in-img"></a>
+        <a href="https://twitter.com/"><img src="<?= ASSET . "/icons/twitter.png"?>" alt="twitters-img"></a>
       </div>
     </div>
     <div class="footer-middle col-sm-3">
@@ -50,7 +48,7 @@
         <div class="email">
           <img src="<?= ASSET . "/icons/email.png"?>" alt="">
           <p>
-            fpt@fpt.edu.vn
+            Lớp WD16301_3
           </p>
         </div>
       </div>
@@ -58,7 +56,7 @@
         <div class="dien-thoai">
           <img src="<?= ASSET . "/icons/dien-thoai"?>.png" alt="">
           <p>
-            0123456789
+            Nhóm 6
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 RewriteEngine on
-RewriteRule ^(view|controller|dao)/.*$ index.php
+
 RewriteRule ^admin/.*$ admin/index.php [NC,QSA]
+RewriteRule ^uploads/(.*)$ uploads/$1 [NC,QSA]
+RewriteRule ^asset/(.*)$ asset/$1 [NC,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !^admin$
-RewriteRule ^(.*)$ index.php/ [NC,QSA]
+RewriteRule ^(.*)$ index.php [NC,QSA]

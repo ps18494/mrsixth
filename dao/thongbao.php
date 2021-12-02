@@ -26,3 +26,12 @@ function getThongBaoByUserId($idUser)
     $result = pdo_query($sql, $idUser);
     return $result;
 }
+
+
+// Kiểm tra thông báo chưa đọc của User
+function kiemTraThongBao($idUser)
+{
+    $sql = "SELECT COUNT(`id_thong_bao`) FROM `thong_bao` WHERE `id_user` = ?";
+    $result = pdo_query_value($sql, $idUser);
+    return $result > 0;
+}

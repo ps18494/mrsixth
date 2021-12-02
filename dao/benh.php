@@ -8,6 +8,14 @@ function getAllBenh($star, $pagesize)
     return $result;
 }
 
+// Lay tat ca benh
+function getTatCaBenh()
+{
+    $sql = "SELECT LEFT(`ten_benh`, 1) as `first_char`, `id_benh`, `ten_benh`, `mo_ta` FROM `benh`";
+    $result = pdo_query($sql);
+    return $result;
+}
+
 function getAllBenh2()
 {
     $sql = "SELECT `ten_benh` FROM benh  ORDER BY `ten_benh` ASC";

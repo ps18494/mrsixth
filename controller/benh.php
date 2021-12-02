@@ -5,12 +5,28 @@ require_once "dao/benh.php";
 require_once "dao/quantam.php";
 require_once "dao/dexuat.php";
 
+
+/**
+ * https://stackoverflow.com/questions/21896706/how-to-group-mysql-results-by-alphabetical-letters
+ */
 function index()
 {   
-    global $records, $lastChar;
-    
-    $records = getAllBenh2();
-    $lastChar = '';          
+    global $danhSachBenhTheoKyTu;
+    $danhSachBenhTheoKyTu = [];
+    $danhSachBenh = getTatCaBenh();
+
+    // var_dump($danhSachBenh);
+    // echo $danhSachBenh['0']['first_char'];
+    // Nhóm các ký tự
+    foreach($danhSachBenh as $benh ) {
+        $first_char = $benh['first_char'];
+        // echo $first_char;
+        if (!array_key_exists($first_char, $danhSachBenhTheoKyTu)) {
+            $danhSachBenhTheoKyTu[$first_char] = [];
+        }
+        array_push($danhSachBenhTheoKyTu[$first_char], $benh);
+        // $danhSachBenhTheoKyTu[$first_char]
+    }
 
     return DEFAULT_VIEW . "benh/index.php";
 }

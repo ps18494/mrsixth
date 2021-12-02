@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $TITLE ?></title>
     <!-- CSS only -->
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/510fdd3937.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="<?= ASSET . "css/bootstrap.min.css" ?>">
+    <link rel="stylesheet" href="<?= ASSET . "css/font-awesome.min.css" ?>">
     <link rel="stylesheet" href="<?= ASSET . "css/style.css" ?>">
-    <link rel="stylesheet" href="<?= ASSET . "css/tintuc.css"?>"/>
-    <link rel="stylesheet" href="<?= ASSET . "css/ttcn.css"?>"/>
-    <link rel="stylesheet" href="<?= ASSET . "css/thuoc.css"?>"/>
-
 </head>
-<body>
-    <?php include(DEFAULT_LAYOUT . "header.php"); ?>
 
+<body>
+
+    <?php include(DEFAULT_LAYOUT . "header.php"); ?>
+    <button class="scrollToTopBtn" id="scrollToTopBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+    </button>
     <?php include($VIEW); ?>
 
     <?php include(DEFAULT_LAYOUT . "footer.php"); ?>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="<?= ASSET . "js/init.js" ?>"></script>
+    <script src="<?= ASSET . "js/jquery-3.2.1.slim.min.js" ?>"></script>
+    <script src="<?= ASSET . "js/popper.min.js" ?>"></script>
+    <script src="<?= ASSET . "js/bootstrap.min.js" ?>"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
+
 </html>

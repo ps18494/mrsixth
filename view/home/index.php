@@ -9,10 +9,10 @@
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>
-                <a href="<?= ROOT_DOMAIN . "/singup" ?>">
+                <a href="<?= ROOT_DOMAIN . "/signup/" ?>">
                     <button type="submit">Đăng ký</button>
                 </a>
-                <a href="<?= ROOT_DOMAIN . "/login" ?>">
+                <a href="<?= ROOT_DOMAIN . "/login/" ?>">
                     <button type="submit">Đăng nhập</button>
                 </a>
             </div>
@@ -74,7 +74,7 @@
                     <p class="card-text card-small">
                         Khách hàng có thể tra cứu bệnh thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "benh/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -84,7 +84,7 @@
                     <p class="card-text">
                         Khách hàng có thể tra cứu thuốc thông qua các triệu chứng.
                     </p>
-                    <button type="submit" class="btn-tra-cuu">Tra cứu</button>
+                    <button data-action="<?= ASSET . "thuoc/timkiem"?>" class="btn-tra-cuu">Tra cứu</button>
                 </div>
             </div>
             <div class="card text-center">
@@ -272,7 +272,7 @@
         </section>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="title">
             <h2>Liên hệ</h2>
             <p>
@@ -305,3 +305,4 @@
         </div>
     </div>
 </div>
+<script src="<?= ASSET . "js/index.js"?>"></script>

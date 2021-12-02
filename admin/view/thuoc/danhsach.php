@@ -1,9 +1,11 @@
-<h1>
-    Đây là danh sách thuốc
-</h1>
-<?php $ds = get8Thuoc(); ?>
-
 <table class="ds-thuoc table">
+    <form action="<?= ROOT_DOMAIN . "/admin/thuoc/timkiem" ?>" method="get">
+        <div class="search-drug form-group">
+            <label for="search">Tìm kiếm tên thuốc</label>
+            <input type="text" name="kw_drug" placeholder="Nhập từ khóa" class="input-search form-control">
+            <input class="sub-sr-drug" type="submit" value="Tìm kiếm">
+        </div>
+    </form>
     <thead class="thead-dark">
         <tr>
             <th scope="col">Tên thuốc</th>
@@ -17,6 +19,7 @@
         </tr>
     </thead>
     <tbody>
+        <?php $ds = pagination(); ?>
         <?php foreach ($ds as $item) { ?>
             <tr class="data-drug">
                 <td class="ten_thuoc">
@@ -56,18 +59,16 @@
                 </td>
                 <td class="d-flex function">
                     <a href="<?= ROOT_DOMAIN . "/admin/thuoc/sua?id_thuoc=" . $item['id_thuoc'] ?>"><button name="btn-sua-thuoc" class="btn-function">Sửa</button></a>
-                    <a onclick="return confirm('Bạn muốn xóa dữ liệu này ?')" href="<?= ROOT_DOMAIN . "/admin/thuoc/xoa/?id_thuoc=" . $item['id_thuoc'] ?>" ?><button name="btn-xoa-thuoc" class="btn-function">Xóa</button></a>
+                    <a onclick="return confirm('Bạn muốn xóa dữ liệu này ?')" href="<?= ROOT_DOMAIN . "/admin/thuoc/xoa?id_thuoc=" . $item['id_thuoc'] ?>" ?><button name="btn-xoa-thuoc" class="btn-function">Xóa</button></a>
                 </td>
             </tr>
         <?php } ?>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <?php for ($i = 1; $i < $total_pages; $i++) { ?>
+            <li class="page-item"><a class="page-link" href="?num_pages=<?= $i ?>"><?= $i ?></a></li>
+        <?php } ?>
+    </ul>
+</nav>

@@ -51,13 +51,8 @@
 /* add drug */
 
 .wrapper {
-    width: 90%;
+    width: 85%;
     margin: 50px auto;
-}
-
-.add-drug {
-    display: grid;
-    grid-template-columns: auto auto auto;
 }
 
 .label-add-drug {
@@ -73,6 +68,42 @@
 
 .btn-add-drug {
     margin: 0 auto;
+}
+
+.search-drug {
+    width: 70%;
+    display: flex;
+    margin: 30px auto;
+}
+
+.search-drug label {
+    margin: auto 20px;
+}
+
+.input-search {
+    width: 50%;
+    height: 54px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 20px;
+    cursor: pointer;
+}
+
+.sub-sr-drug {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 
@@ -91,6 +122,21 @@
 }
 
 .btn-update-drug {
+    position: relative;
+    left: 48%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn-add-drug {
     position: relative;
     left: 48%;
     background-color: #4CAF50;

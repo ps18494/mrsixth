@@ -1,6 +1,10 @@
 <div class="wrapper">
     <h2>Thêm thuốc</h2>
-    <form action="<?= ROOT_DOMAIN . "/admin/thuoc/them" ?>" method="POST" class="add-drug">
+    <form method="POST" class="add-drug">
+        <?php 
+            if(isset($successAlert))
+            echo '<span style="color: red;">' . "</br>" . $successAlert . '</span>';
+        ?>
         <div class="label-add-drug form-group row">
             <label for="inputName" class="col-sm-1-12 col-form-label">Id thuốc</label>
             <div class="col-sm-1-12">
@@ -10,7 +14,13 @@
         <div class="label-add-drug form-group row">
             <label for="inputName" class="col-sm-1-12 col-form-label">Tên thuốc</label>
             <div class="col-sm-1-12">
-                <input type="text" class="form-control" name="ten_thuoc" id="inputName" placeholder="Nhập tên thuốc">
+                <input type="text" class="form-control" name="ten_thuoc" id="inputName" value="<?php echo isset($_POST['ten_thuoc']) ? $_POST['ten_thuoc'] : ''; ?>" placeholder="Nhập tên thuốc">
+                <?php if (!empty(($msgError['ten_thuoc']['empty_ten_thuoc']))) {
+                    echo '<span style="color: red;">' . $msgError['ten_thuoc']['empty_ten_thuoc'] . '</span>';
+                } ?>
+                <?php if (!empty(($msgError['ten_thuoc']['exist_ten_thuoc']))) {
+                    echo '<span style="color: red;">' . $msgError['ten_thuoc']['exist_ten_thuoc'] . '</span>';
+                } ?>
             </div>
         </div>
         <div class="label-add-drug form-group row">
@@ -52,7 +62,10 @@
         <div class="label-add-drug form-group row">
             <label for="inputName" class="col-sm-1-12 col-form-label">Chỉ định</label>
             <div class="col-sm-1-12">
-                <input type="text" class="form-control" name="chi_dinh" id="inputName" name="chi_dinh"></input>
+                <input type="text" class="form-control" name="chi_dinh" value="<?php echo isset($_POST['chi_dinh']) ? $_POST['chi_dinh'] : ''; ?>" id="inputName" name="chi_dinh"></input>
+                <?php if (!empty(($msgError['chi_dinh']['empty_chi_dinh']))) {
+                    echo '<span style="color: red;">' . $msgError['chi_dinh']['empty_chi_dinh'] . '</span>';
+                } ?>
             </div>
         </div>
         <div class="label-add-drug form-group row">
@@ -74,10 +87,10 @@
             </div>
         </div>
         <div class="box-add-drug form-group row">
-            <div class="offset-sm-6">
-                <input type="submit" name="btn-add-drug" class="btn btn-primary"></input>
-                <?php if(isset($msgError) && $msgError != '') echo $msgError ?>
+            <div class="col-sm-1-12">
+                <input type="submit" name="btn-add-drug" class="btn-add-drug btn btn-primary" value="Thêm"></input>
             </div>
+
         </div>
     </form>
 

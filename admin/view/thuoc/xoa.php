@@ -6,4 +6,6 @@
 <h1>
     Đây là trang xóa thuốc
 </h1>
-
+<?php
+header("location: " . ROOT_DOMAIN . "/admin/thuoc/danhsach");
+?>

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 // Danh sách thuốc
 function getAllThuoc()
@@ -9,12 +11,6 @@ function getAllThuoc()
 }
 // Lấy 10 thuốc trong danh sách mai mốt làm phân trang
 
-function get8Thuoc()
-{
-    $sql = "SELECT * FROM `thuoc` LIMIT 0,8";
-    $result = pdo_query($sql);
-    return $result;
-}
 
 // Thêm thuốc
 function insertThuoc(

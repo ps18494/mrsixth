@@ -6,7 +6,7 @@
         <!-- Tic tức -->
         <?php foreach ($dstintuc as $tintuc) {
             extract($tintuc); ?>
-            <article class="flex flex-col p-2 mb-4 border shadow hightligt-left">
+        <article class="flex flex-col p-4 mb-4 border shadow hightligt-left" >
                 <header>
                     <a href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=$id_tin" ?>">
                         <h2><?= $tieu_de ?></h2>
@@ -75,19 +75,19 @@
     <div class="w-25">
         <div class="flex flex-column border p-2 ml-4 mb-2">
             <div class="font-weight-bold text-uppercase">Các tin nổi bậc</div>
-            <div class="flex flex-column">
+            <div class="flex flex-column" >
                 <?php foreach ($tinXemNhieu as $tin) {
                     extract($tin); ?>
-                    <a data-toggle="tooltip" title="<?=$mo_ta?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a>
+                <a data-toggle="tooltip" title="<?=$mo_ta?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a> <br>
                 <?php } ?>
             </div>
         </div>
         <div class="flex flex-column border p-2 ml-4">
             <div class="font-weight-bold text-uppercase">Các tin mới nhất</div>
-            <div class="flex flex-column">
+            <div class="flex flex-column" >
                 <?php foreach ($tinMoiNhat as $tin) {
                     extract($tin); ?>
-                    <a data-toggle="tooltip" title="<?=$mo_ta?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a>
+                <a data-toggle="tooltip" title="<?=$mo_ta?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a> <br>
                 <?php } ?>
             </div>
         </div>

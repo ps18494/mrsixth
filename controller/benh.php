@@ -32,10 +32,14 @@ function index()
 }
 
 function chitiet()
-{
+{   
+    
+    
     global $benh, $danhSachAnhBenh, $id_user, $user_care;
     $id_benh = $_GET["idbenh"] ?? null;
-    $id_user = $_SESSION["user"];
+    if(isset($_SESSION['user'])){
+        $id_user = $_SESSION["user"];
+    }
 
     if (!$id_benh) {
         // Tạm thời chuyển hướng đến trang chủ

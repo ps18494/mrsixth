@@ -11,7 +11,7 @@
          <?php foreach ($listThuoc as $thuoc) { extract($thuoc)?>
              <div class="w-20 d-flex flex-column justify-content-center items-center thuoc" data-toggle="tooltip" title="<?= $chi_dinh ?>">
                 <div class="w-50 align-self-center">
-                    <img class="p-2 w-100" src="<?= ASSET . "/icons/drug-1.1s-200px.png" ?>" alt="<?= $ten_thuoc ?>" />
+                    <a href="<?= ROOT_DOMAIN . "/thuoc/chitiet?id_thuoc=" . $id_thuoc ?>"><img class="p-2 w-100" src="<?= ASSET . "/icons/drug-1.1s-200px.png" ?>" alt="<?= $ten_thuoc ?>" /></a>
                 </div>
                 <div class="mw-50 text-center align-self-center">
                     <a href="<?= ROOT_DOMAIN . "/thuoc/chitiet?id_thuoc=" . $id_thuoc ?>">

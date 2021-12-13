@@ -32,10 +32,10 @@
     <div class="w-25">
         <div class="flex flex-column border p-2 ml-4 mb-2">
             <div class="font-weight-bold text-uppercase">Các tin nổi bậc</div>
-            <div class="flex flex-column flex-wrap">
+            <div class="flex flex-column flex-wrap" >
                 <?php foreach ($listtintuc as $tin) {
                     extract($tin); ?>
-                    <a data-toggle="tooltip" title="<?= $mo_ta ?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a>
+                <a data-toggle="tooltip" title="<?= $mo_ta ?>" href="<?= ROOT_DOMAIN . "/tintuc/chitiet?id_tin=" . $id_tin ?>"><?= $tieu_de ?></a> <br>
                 <?php } ?>
             </div>
         </div>

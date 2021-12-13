@@ -4,7 +4,8 @@ function index()
 {
     // Chuyển hướng người dùng đã đăng nhập
     if (is_authenticated()) {
-        header("Location: " . ROOT_DOMAIN);
+        header("Location: " . ROOT_DOMAIN . "/");
+        exit;
     }
 
     // Nếu phương thức là POST thì tiến hành đăng nhập và chuyển hướng

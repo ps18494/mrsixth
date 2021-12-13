@@ -6,7 +6,8 @@ require_once "auth.php";
 function index()
 {
     if (is_authenticated()) {
-        header("location:" . ROOT_DOMAIN);
+        header("location:" . ROOT_DOMAIN . "/");
+        exit;
     }
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST["email"]) {

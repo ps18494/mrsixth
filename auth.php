@@ -24,6 +24,18 @@ function login_required()
     }
 }
 
+
+function admin_required()
+{
+    login_required();
+    if ((int) $_SESSION["role"] != 1) {
+        header("Location:" . ROOT_DOMAIN . "/");
+        exit();
+    }
+}
+
+
+
 // Kiểm tra đã có người dùng trong Session hiện tại hay chưa
 function is_authenticated()
 {
